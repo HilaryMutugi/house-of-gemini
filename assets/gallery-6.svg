@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs><linearGradient id="f" x2="1"><stop stop-color="#b88b45"/><stop offset="1" stop-color="#4f272e"/></linearGradient></defs>
+  <rect width="900" height="1100" fill="url(#f)"/><path d="m450 180 240 210-90 440H300l-90-440Z" fill="#f8f4ec" opacity=".86"/><path d="m450 180-80 650h160Z" fill="#20211f" opacity=".7"/>
+  <text x="50%" y="1010" text-anchor="middle" fill="#fff" font-family="Georgia" font-size="38">Event Clothing Placeholder</text>
+</svg>

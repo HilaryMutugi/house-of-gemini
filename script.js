@@ -65,6 +65,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inquiry form: creates a structured WhatsApp message ready for the customer to send.
   const form = document.querySelector("#inquiry-form");
   const status = document.querySelector(".form-status");
+  if (form) {
+    const params = new URLSearchParams(window.location.search);
+    const collection = params.get("collection");
+    const serviceMap = {
+      "Kimono": "Beach / resort wear",
+      "Savannah Bloom": "Ankara / African print fashion",
+      "Signature Elegance": "Ankara / African print fashion",
+      "Professional Uniform": "Industrial / corporate uniforms",
+      "School Uniform": "School uniform system"
+    };
+    if (collection) {
+      const service = form.querySelector("#service");
+      const message = form.querySelector("#message");
+      if (service && serviceMap[collection]) service.value = serviceMap[collection];
+      if (message && !message.value) {
+        message.value = `I am interested in the ${collection} Collection.`;
+      }
+    }
+  }
   form?.addEventListener("submit", event => {
     event.preventDefault();
     const data = new FormData(form);

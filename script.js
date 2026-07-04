@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeMenu = () => {
     if (!toggle || !nav) return;
     toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
     nav.classList.remove("open");
     document.body.classList.remove("menu-open");
   };
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", () => {
       const open = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!open));
+      toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
       nav.classList.toggle("open", !open);
       document.body.classList.toggle("menu-open", !open);
     });

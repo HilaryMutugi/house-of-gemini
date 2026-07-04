@@ -97,7 +97,7 @@ p { margin: 0; }
   border-bottom: 1px solid transparent;
   backdrop-filter: blur(14px);
   transition: .25s ease;
-  overflow: hidden;
+  overflow: visible;
 }
 .site-header.scrolled { border-color: rgba(184,139,69,.22); box-shadow: 0 10px 35px rgba(23,63,54,.07); }
 .nav-wrap { min-height: 122px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
@@ -163,10 +163,19 @@ p { margin: 0; }
 }
 .site-nav .btn:hover { border-color: var(--emerald); background: var(--emerald); }
 .menu-toggle {
-  display: none; z-index: 102; width: 44px; height: 44px; padding: 0;
-  border: 1px solid var(--line); border-radius: 50%; background: transparent;
+  display: none; z-index: 102; width: 82px; height: 44px; padding: 0 13px;
+  align-items: center; justify-content: center; gap: 9px;
+  border: 1px solid rgba(184,139,69,.34); border-radius: 999px; background: rgba(255,255,255,.62);
+  color: var(--emerald);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(23,63,54,.08);
 }
-.menu-toggle span { display: block; width: 18px; height: 1px; margin: 5px auto; background: var(--ink); transition: .25s; }
+.menu-toggle::after { content: "Menu"; }
+.menu-toggle[aria-expanded="true"]::after { content: "Close"; }
+.menu-toggle span { display: block; width: 16px; height: 2px; margin: 4px 0; background: var(--emerald); transition: .25s; }
 .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }
 .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
 body.menu-open,
@@ -800,15 +809,47 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .section { padding: 68px 0; }
-  .menu-toggle { display: block; }
+  .menu-toggle { display: inline-flex; }
   .site-nav {
-    position: fixed; inset: 0; padding: 110px 32px 40px;
-    flex-direction: column; align-items: flex-start; gap: 22px; background: var(--paper);
-    opacity: 0; visibility: hidden; transform: translateY(-12px); transition: .25s;
+    position: fixed;
+    inset: 108px 16px auto;
+    max-height: calc(100dvh - 126px);
+    padding: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    border: 1px solid rgba(184,139,69,.22);
+    border-radius: 18px;
+    background: rgba(255,253,248,.98);
+    box-shadow: 0 22px 60px rgba(23,63,54,.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(.98);
+    transform-origin: top right;
+    transition: opacity .22s ease, transform .22s ease, visibility .22s ease;
+    overflow-y: auto;
   }
   .site-nav.open { opacity: 1; visibility: visible; transform: none; }
-  .site-nav a { font-family: var(--serif); font-size: 1.8rem; font-weight: 500; }
-  .site-nav .btn { margin-top: 12px; font-family: var(--sans); font-size: .83rem; }
+  .site-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 12px;
+    border-radius: 12px;
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 650;
+  }
+  .site-nav a:not(.btn)::after { display: none; }
+  .site-nav a.active,
+  .site-nav a:hover { background: rgba(184,139,69,.1); }
+  .site-nav .btn {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 8px;
+    font-family: var(--sans);
+    font-size: .78rem;
+  }
   .hero-grid, .split, .page-hero-grid, .contact-grid, .ankara-grid, .coast-heading, .case-study-grid, .collection-copy { grid-template-columns: 1fr; }
   .hero { padding-top: 35px; }
   .hero-copy h1 { font-size: clamp(2.55rem, 9vw, 4.6rem); }
@@ -849,6 +890,9 @@ body.modal-open { overflow: hidden; }
   .brand-logo { width: 138px; height: 55px; }
   .site-header .brand { gap: 5px; margin-left: 0; }
   .site-header .brand-logo { width: 82px; height: 82px; margin-block: 0; }
+  .site-nav { inset: 88px 14px auto; max-height: calc(100dvh - 106px); }
+  .site-nav a { min-height: 46px; font-size: 1.18rem; }
+  .menu-toggle { width: 76px; height: 42px; padding-inline: 11px; font-size: .68rem; }
   .site-header .brand::after {
     font-size: 1.12rem;
     font-weight: 800;

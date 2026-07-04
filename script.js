@@ -1,4 +1,4 @@
-/* HOUSE OF GEMINI — SITE INTERACTIONS */
+/* HOUSE OF GEMINI - SITE INTERACTIONS */
 document.addEventListener("DOMContentLoaded", () => {
   // Slim progress line across the top of the page.
   const progress = document.createElement("div");
@@ -10,6 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".site-nav");
 
+  document.querySelectorAll(".site-nav a.active").forEach(link => {
+    link.setAttribute("aria-current", "page");
+  });
+
+  const closeMenu = () => {
+    if (!toggle || !nav) return;
+    toggle.setAttribute("aria-expanded", "false");
+    nav.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  };
+
   // Mobile navigation
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
@@ -18,11 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.toggle("open", !open);
       document.body.classList.toggle("menu-open", !open);
     });
-    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-      toggle.setAttribute("aria-expanded", "false");
-      nav.classList.remove("open");
-      document.body.classList.remove("menu-open");
-    }));
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeMenu();
+    });
+    document.addEventListener("click", event => {
+      if (!document.body.classList.contains("menu-open")) return;
+      if (nav.contains(event.target) || toggle.contains(event.target)) return;
+      closeMenu();
+    });
   }
 
   // Header shadow after scrolling
@@ -53,9 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Portfolio filters
   const filters = document.querySelectorAll(".filter-btn");
   const galleryItems = document.querySelectorAll(".gallery-item[data-category]");
+  filters.forEach(button => {
+    button.setAttribute("aria-pressed", String(button.classList.contains("active")));
+  });
   filters.forEach(button => button.addEventListener("click", () => {
-    filters.forEach(item => item.classList.remove("active"));
+    filters.forEach(item => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
     const filter = button.dataset.filter;
     galleryItems.forEach(item => {
       item.classList.toggle("hidden", filter !== "all" && item.dataset.category !== filter);
@@ -83,11 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
       data.get("message") || "Not provided"
     ];
     const whatsappUrl = `https://wa.me/254726411745?text=${encodeURIComponent(lines.join("\n"))}`;
-    if (status) status.textContent = "Opening WhatsApp with your order details…";
+    if (status) status.textContent = "Opening WhatsApp with your order details...";
     window.open(whatsappUrl, "_blank", "noopener");
   });
 
-  // Portfolio lightbox — click any gallery image to inspect it full-screen.
+  // Portfolio lightbox - click any gallery image to inspect it full-screen.
   const galleryLinks = document.querySelectorAll(".gallery-item img");
   if (galleryLinks.length) {
     const lightbox = document.createElement("div");
@@ -97,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.setAttribute("aria-label", "Portfolio image viewer");
     lightbox.innerHTML = `
       <div class="lightbox-dialog">
-        <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+        <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
         <img class="lightbox-image" alt="">
         <p class="lightbox-caption"></p>
       </div>`;

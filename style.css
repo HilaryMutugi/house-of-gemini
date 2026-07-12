@@ -1341,7 +1341,7 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
   transform-origin: right center;
 }
 .home-page .trust-item { padding-block: 21px; }
-.home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 86px; }
+.home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 72px; }
 .home-page .card-grid { gap: 0; border-block: 1px solid var(--line); }
 .home-page .service-card {
   min-height: 310px;
@@ -1361,6 +1361,10 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 .home-page .case-image img,
 .home-page .coast-card img,
 .home-page .gallery-item img { transition: transform .8s cubic-bezier(.2,.65,.25,1); }
+.home-page .case-image img { object-position: center 10%; }
+.home-page .gallery-preview .gallery-item:first-child img { object-position: center 6%; }
+.home-page .gallery-preview .gallery-item:nth-child(2) img { object-position: center 8%; }
+.home-page .section-heading { margin-bottom: 34px; }
 .home-page .case-image:hover img,
 .home-page .coast-card:hover img,
 .home-page .gallery-item:hover img { transform: scale(1.025); }
@@ -1369,7 +1373,7 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
   .home-page .hero-grid { grid-template-columns: 1fr; }
   .home-page .hero-media { min-height: 520px; }
   .home-page .hero-media::after { display: none; }
-  .home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 68px; }
+  .home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 60px; }
 }
 
 @media (max-width: 720px) {

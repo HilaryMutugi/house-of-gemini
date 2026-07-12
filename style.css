@@ -1326,20 +1326,9 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 .home-page .hero-copy { padding-left: 22px; border-left: 1px solid rgba(184,139,69,.55); }
 .home-page .hero-copy h1 { max-width: 680px; letter-spacing: -.035em; }
 .home-page .hero-copy .lead { max-width: 510px; }
-.home-page .hero-media { min-height: 570px; }
-.home-page .hero-media::after {
-  content: "HOUSE OF GEMINI  /  NAIROBI";
-  position: absolute;
-  right: -35px;
-  top: 50%;
-  z-index: 3;
-  color: var(--gold);
-  font-size: .58rem;
-  font-weight: 800;
-  letter-spacing: .2em;
-  transform: rotate(90deg) translateX(50%);
-  transform-origin: right center;
-}
+.home-page .hero-media { height: clamp(540px, 34vw, 650px); min-height: 0; }
+.home-page .hero-media img { object-position: center top; }
+.home-page .hero-media::after { display: none; }
 .home-page .trust-item { padding-block: 21px; }
 .home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 72px; }
 .home-page .card-grid { gap: 0; border-block: 1px solid var(--line); }
@@ -1371,7 +1360,7 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 
 @media (max-width: 900px) {
   .home-page .hero-grid { grid-template-columns: 1fr; }
-  .home-page .hero-media { min-height: 520px; }
+  .home-page .hero-media { height: 520px; min-height: 0; }
   .home-page .hero-media::after { display: none; }
   .home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 60px; }
 }
@@ -1379,7 +1368,7 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 @media (max-width: 720px) {
   .home-page .hero { padding: 34px 0 48px; }
   .home-page .hero-copy { padding-left: 14px; }
-  .home-page .hero-media { min-height: 430px; }
+  .home-page .hero-media { height: 430px; min-height: 0; }
   .home-page .card-grid { border: 0; }
   .home-page .service-card {
     min-height: 250px;

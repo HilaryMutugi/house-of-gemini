@@ -239,6 +239,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // The footer contains its own WhatsApp action, so quietly remove the floating
+  // duplicate while the footer is in view.
+  const footer = document.querySelector(".site-footer");
+  if (footer && "IntersectionObserver" in window) {
+    const footerObserver = new IntersectionObserver(entries => {
+      document.body.classList.toggle("footer-visible", entries[0].isIntersecting);
+    }, { threshold: 0.08 });
+    footerObserver.observe(footer);
+  }
+
   // Current year
   document.querySelectorAll("[data-year]").forEach(item => {
     item.textContent = new Date().getFullYear();

@@ -61,10 +61,32 @@ document.addEventListener("DOMContentLoaded", () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.03, rootMargin: "0px 0px 80px 0px" });
     reveals.forEach(item => observer.observe(item));
   } else {
     reveals.forEach(item => item.classList.add("visible"));
+  }
+
+  // Load the large brand-book PDF only when the viewer is near the viewport.
+  const brandBookFrame = document.querySelector(".brand-book-viewer iframe[data-src]");
+  if (brandBookFrame && window.matchMedia("(min-width: 651px)").matches) {
+    const loadBrandBook = () => {
+      if (!brandBookFrame.dataset.src) return;
+      brandBookFrame.addEventListener("load", () => brandBookFrame.classList.add("is-loaded"), { once: true });
+      brandBookFrame.src = brandBookFrame.dataset.src;
+      delete brandBookFrame.dataset.src;
+    };
+    if ("IntersectionObserver" in window) {
+      const bookObserver = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          loadBrandBook();
+          bookObserver.disconnect();
+        }
+      }, { rootMargin: "500px 0px" });
+      bookObserver.observe(brandBookFrame.closest(".brand-book-viewer"));
+    } else {
+      loadBrandBook();
+    }
   }
 
   // Portfolio filters
@@ -155,6 +177,65 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.addEventListener("keydown", event => {
       if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+    });
+  }
+
+  // Give visitors reliable webmail choices instead of relying on an incorrectly
+  // configured browser or operating-system mailto handler.
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  if (emailLinks.length) {
+    const emailAddress = "info@houseofgemini.co.ke";
+    const emailChooser = document.createElement("div");
+    emailChooser.className = "email-chooser";
+    emailChooser.setAttribute("role", "dialog");
+    emailChooser.setAttribute("aria-modal", "true");
+    emailChooser.setAttribute("aria-labelledby", "email-chooser-title");
+    emailChooser.innerHTML = `
+      <div class="email-chooser-card">
+        <button class="email-chooser-close" type="button" aria-label="Close email options">&times;</button>
+        <span class="eyebrow">Email House of Gemini</span>
+        <h2 id="email-chooser-title">How would you like to email us?</h2>
+        <p>Choose your email service or copy our address.</p>
+        <div class="email-chooser-actions">
+          <a class="email-option gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}" target="_blank" rel="noopener">Open Gmail</a>
+          <a class="email-option outlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(emailAddress)}" target="_blank" rel="noopener">Open Outlook</a>
+          <a class="email-option default-mail" href="mailto:${emailAddress}">Use another email app</a>
+          <button class="email-option copy-email" type="button">Copy email address</button>
+        </div>
+        <p class="email-copy-status" aria-live="polite"></p>
+      </div>`;
+    document.body.append(emailChooser);
+
+    const closeEmailChooser = () => {
+      emailChooser.classList.remove("open");
+      document.body.classList.remove("modal-open");
+    };
+    const openEmailChooser = event => {
+      event.preventDefault();
+      emailChooser.classList.add("open");
+      document.body.classList.add("modal-open");
+      emailChooser.querySelector(".email-option").focus();
+    };
+
+    emailLinks.forEach(link => link.addEventListener("click", openEmailChooser));
+    emailChooser.querySelector(".email-chooser-close").addEventListener("click", closeEmailChooser);
+    emailChooser.addEventListener("click", event => {
+      if (event.target === emailChooser) closeEmailChooser();
+    });
+    emailChooser.querySelectorAll("a.email-option").forEach(link => {
+      link.addEventListener("click", () => setTimeout(closeEmailChooser, 100));
+    });
+    emailChooser.querySelector(".copy-email").addEventListener("click", async () => {
+      const copyStatus = emailChooser.querySelector(".email-copy-status");
+      try {
+        await navigator.clipboard.writeText(emailAddress);
+        copyStatus.textContent = "Email address copied.";
+      } catch {
+        copyStatus.textContent = emailAddress;
+      }
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && emailChooser.classList.contains("open")) closeEmailChooser();
     });
   }
 

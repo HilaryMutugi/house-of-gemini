@@ -11,7 +11,7 @@ Double-click `index.html`. For the most accurate preview, open the folder in VS 
 Use Find and Replace across all files:
 
 1. Phone and WhatsApp: `0726 411 745` (`+254 726 411 745` internationally).
-2. Email: `gemini21fashion@gmail.com`.
+2. Email: `info@houseofgemini.co.ke`.
 3. Public locations: `Pearl Crescent Drive, Kamulu, Nairobi` and `Mariakani, Kilifi` for the coastal region.
 4. In `about.html`, personalize the founder quote and add the founder's name if desired.
 

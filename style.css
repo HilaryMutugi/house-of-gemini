@@ -1315,3 +1315,73 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
   .email-chooser-card { padding: 34px 20px 24px; }
   .email-chooser-actions { grid-template-columns: 1fr; }
 }
+
+/* Homepage editorial direction */
+.home-page .hero {
+  min-height: calc(100vh - 96px);
+  padding: 42px 0 64px;
+  background: linear-gradient(105deg, rgba(255,253,248,.98) 0 48%, rgba(246,240,230,.72) 100%);
+}
+.home-page .hero-grid { grid-template-columns: .84fr 1.16fr; gap: clamp(48px, 6vw, 86px); }
+.home-page .hero-copy { padding-left: 22px; border-left: 1px solid rgba(184,139,69,.55); }
+.home-page .hero-copy h1 { max-width: 680px; letter-spacing: -.035em; }
+.home-page .hero-copy .lead { max-width: 510px; }
+.home-page .hero-media { min-height: 620px; }
+.home-page .hero-media::after {
+  content: "HOUSE OF GEMINI  /  NAIROBI";
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  z-index: 3;
+  color: var(--gold);
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+  transform: rotate(90deg) translateX(50%);
+  transform-origin: right center;
+}
+.home-page .trust-item { padding-block: 21px; }
+.home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 86px; }
+.home-page .card-grid { gap: 0; border-block: 1px solid var(--line); }
+.home-page .service-card {
+  min-height: 310px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.home-page .service-card:last-child { border-right: 0; }
+.home-page .service-card:hover { transform: none; background: rgba(255,253,248,.78); box-shadow: none; }
+.home-page .card-number { font-size: 1.35rem; }
+.home-page .case-study { padding-block: 78px; }
+.home-page .case-image,
+.home-page .coast-card,
+.home-page .gallery-item { border-radius: 4px; }
+.home-page .case-image img,
+.home-page .coast-card img,
+.home-page .gallery-item img { transition: transform .8s cubic-bezier(.2,.65,.25,1); }
+.home-page .case-image:hover img,
+.home-page .coast-card:hover img,
+.home-page .gallery-item:hover img { transform: scale(1.025); }
+
+@media (max-width: 900px) {
+  .home-page .hero-grid { grid-template-columns: 1fr; }
+  .home-page .hero-media { min-height: 520px; }
+  .home-page .hero-media::after { display: none; }
+  .home-page main > .section:not(.case-study):not(.ankara-section) { padding-block: 68px; }
+}
+
+@media (max-width: 720px) {
+  .home-page .hero { padding: 34px 0 48px; }
+  .home-page .hero-copy { padding-left: 14px; }
+  .home-page .hero-media { min-height: 430px; }
+  .home-page .card-grid { border: 0; }
+  .home-page .service-card {
+    min-height: 250px;
+    padding-inline: 20px;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+  }
+  .home-page .service-card:last-child { border-bottom: 1px solid var(--line); }
+}

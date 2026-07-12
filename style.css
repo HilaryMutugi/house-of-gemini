@@ -1318,15 +1318,15 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 
 /* Homepage editorial direction */
 .home-page .hero {
-  min-height: calc(100vh - 96px);
-  padding: 42px 0 64px;
+  min-height: auto;
+  padding: 30px 0 48px;
   background: linear-gradient(105deg, rgba(255,253,248,.98) 0 48%, rgba(246,240,230,.72) 100%);
 }
 .home-page .hero-grid { grid-template-columns: .84fr 1.16fr; gap: clamp(48px, 6vw, 86px); }
 .home-page .hero-copy { padding-left: 22px; border-left: 1px solid rgba(184,139,69,.55); }
 .home-page .hero-copy h1 { max-width: 680px; letter-spacing: -.035em; }
 .home-page .hero-copy .lead { max-width: 510px; }
-.home-page .hero-media { min-height: 620px; }
+.home-page .hero-media { min-height: 570px; }
 .home-page .hero-media::after {
   content: "HOUSE OF GEMINI  /  NAIROBI";
   position: absolute;

@@ -995,7 +995,6 @@ body.modal-open { overflow: hidden; }
 }
 .footer-region { color: rgba(228,210,181,.58); letter-spacing: .04em; }
 body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; transform: translateY(12px); }
-body.footer-visible .site-header { transform: translateY(-105%); }
 
 @media (max-width: 900px) {
   .footer-invitation { grid-template-columns: 1fr; align-items: start; }

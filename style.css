@@ -5,14 +5,12 @@
 :root {
   --cream: #f8f4ec;
   --paper: #fffdf8;
-  --ink: #20211f;
+  --ink: #171916;
   --muted: #66665f;
   --gold: #b88b45;
   --gold-light: #e4d2b5;
   --beige: #dfd1be;
   --emerald: #173f36;
-  --terracotta: #a94f32;
-  --burgundy: #642b3a;
   --line: rgba(32, 33, 31, 0.13);
   --shadow: 0 20px 60px rgba(30, 30, 24, 0.09);
   --radius: 22px;
@@ -85,7 +83,7 @@ p { margin: 0; }
 .scroll-progress {
   position: fixed; top: 0; left: 0; z-index: 300;
   width: 0; height: 3px;
-  background: linear-gradient(90deg, var(--gold), #dfb45f, var(--terracotta));
+  background: var(--gold);
   box-shadow: 0 1px 7px rgba(184,139,69,.34);
   transition: width .08s linear;
 }
@@ -241,11 +239,8 @@ body.modal-open { overflow: hidden; }
 .trust-item span { color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; }
 
 .pattern-band {
-  height: 18px;
-  background:
-    linear-gradient(135deg, transparent 28%, var(--gold) 28% 38%, transparent 38% 62%, var(--terracotta) 62% 72%, transparent 72%),
-    var(--emerald);
-  background-size: 46px 18px;
+  height: 6px;
+  background: var(--gold);
 }
 
 /* Cards and grids */
@@ -386,13 +381,13 @@ body.modal-open { overflow: hidden; }
   position: absolute; right: -13px; top: -13px; z-index: 2;
   display: grid; place-items: center; width: 43px; height: 43px;
   border: 1px solid rgba(255,255,255,.22); border-radius: 50%;
-  background: var(--burgundy); color: #fff; font-size: 1.4rem;
+  background: var(--ink); color: #fff; font-size: 1.4rem;
 }
 
 /* Ankara collection feature */
 .ankara-section {
   position: relative; overflow: hidden;
-  background: var(--burgundy); color: #fff;
+  background: var(--ink); color: #fff;
 }
 .ankara-section::before {
   content: ""; position: absolute; inset: 0; opacity: .09;

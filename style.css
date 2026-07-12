@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
 /* =========================================================
    HOUSE OF GEMINI — MAIN STYLES
    QUICK EDIT: Change brand colours in the :root section.
@@ -13,9 +15,9 @@
   --emerald: #173f36;
   --line: rgba(32, 33, 31, 0.13);
   --shadow: 0 20px 60px rgba(30, 30, 24, 0.09);
-  --radius: 22px;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Inter, "Segoe UI", Arial, sans-serif;
+  --radius: 18px;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: Manrope, "Segoe UI", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -34,7 +36,7 @@ body::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  opacity: .032;
+  opacity: .018;
   background-image:
     linear-gradient(30deg, var(--ink) 12%, transparent 12.5%, transparent 87%, var(--ink) 87.5%),
     linear-gradient(150deg, var(--ink) 12%, transparent 12.5%, transparent 87%, var(--ink) 87.5%);
@@ -49,8 +51,8 @@ button { cursor: pointer; }
 
 .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
 .narrow { width: min(760px, calc(100% - 40px)); margin-inline: auto; }
-.section { padding: 64px 0; }
-.section-sm { padding: 54px 0; }
+.section { padding: 78px 0; }
+.section-sm { padding: 62px 0; }
 .section-dark { background: var(--emerald); color: #fff; }
 .section-paper { background: var(--paper); }
 .eyebrow {
@@ -65,7 +67,7 @@ button { cursor: pointer; }
   text-transform: uppercase;
 }
 .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
-h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; line-height: 1.08; }
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; line-height: 1.03; }
 h1 { font-size: clamp(3rem, 8vw, 6.7rem); letter-spacing: -0.045em; }
 h2 { font-size: clamp(2.25rem, 5vw, 4rem); letter-spacing: -0.035em; }
 h3 { font-size: 1.55rem; }
@@ -101,7 +103,7 @@ p { margin: 0; }
 .nav-wrap,
 .site-header .brand-logo,
 .site-header .brand::after { transition: min-height .3s ease, width .3s ease, height .3s ease, font-size .3s ease; }
-.nav-wrap { min-height: 122px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+.nav-wrap { min-height: 104px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 15px; z-index: 102; }
 .site-header .brand {
   gap: 3px;
@@ -110,22 +112,22 @@ p { margin: 0; }
 .brand-logo { width: 158px; height: 62px; object-fit: contain; }
 .site-header .brand-logo {
   content: url("assets/house-of-gemini-emblem-tight.png");
-  width: 116px;
-  height: 116px;
+  width: 92px;
+  height: 92px;
   margin-block: 0;
-  filter: drop-shadow(0 9px 20px rgba(184,139,69,.28));
+  filter: drop-shadow(0 7px 16px rgba(184,139,69,.2));
 }
 .site-header .brand::after {
   content: "HOUSE OF GEMINI";
   color: #a9782f;
   font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.78rem;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: .025em;
   white-space: nowrap;
   padding: 10px 0;
-  text-shadow: 0 1px 0 rgba(255,255,255,.8), 0 5px 18px rgba(184,139,69,.2);
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 .site-footer .brand-logo { width: 148px; height: auto; opacity: .92; }
 .site-footer .footer-brand .brand:has(.brand-mark) {
@@ -142,8 +144,8 @@ p { margin: 0; }
 .brand-copy { display: grid; line-height: 1.05; }
 .brand-name { font-family: var(--serif); font-size: 1.25rem; letter-spacing: .025em; }
 .brand-tag { margin-top: 5px; color: var(--gold); font-size: .53rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
-.site-nav { display: flex; align-items: center; gap: 19px; }
-.site-nav a { position: relative; color: var(--emerald); font-size: .84rem; font-weight: 750; }
+.site-nav { display: flex; align-items: center; gap: 18px; }
+.site-nav a { position: relative; color: var(--emerald); font-size: .78rem; font-weight: 700; letter-spacing: .015em; }
 .site-nav a:not(.btn)::after {
   content: ""; position: absolute; left: 0; right: 100%; bottom: -7px;
   height: 1px; background: var(--gold); transition: right .25s ease;
@@ -186,9 +188,9 @@ body.modal-open { overflow: hidden; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  min-height: 50px; padding: 0 24px; border: 1px solid var(--ink);
+  min-height: 48px; padding: 0 24px; border: 1px solid var(--ink);
   border-radius: 999px; background: var(--emerald); color: #fff;
-  font-size: .83rem; font-weight: 800; letter-spacing: .04em;
+  font-size: .78rem; font-weight: 800; letter-spacing: .065em;
   transition: transform .2s ease, background .2s ease, color .2s ease;
 }
 .btn:hover { transform: translateY(-2px); background: var(--gold); border-color: var(--gold); color: var(--ink); }
@@ -198,7 +200,7 @@ body.modal-open { overflow: hidden; }
 .btn-small { min-height: 42px; padding-inline: 19px; }
 
 /* Home hero */
-.hero { position: relative; min-height: calc(100vh - 122px); display: grid; align-items: center; overflow: hidden; padding: 24px 0 42px; background: rgba(248,244,236,.48); }
+.hero { position: relative; min-height: calc(100vh - 104px); display: grid; align-items: center; overflow: hidden; padding: 34px 0 50px; background: rgba(248,244,236,.48); }
 .hero::after {
   content: "GEMINI";
   position: absolute; left: -1.5vw; bottom: -5vw; z-index: -1;

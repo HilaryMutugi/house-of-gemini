@@ -115,6 +115,20 @@ The `CNAME` file in this project already contains `houseofgemini.co.ke`, so GitH
 
 The footer contains the requested founder gift message. It is elegant and subtle enough to remain on the live business website.
 
+## Hidden book hunt
+
+The website includes a temporary Easter egg game in `book-hunt.js` and
+`book-hunt.css`. The tiny gold star beside `Nairobi · Coastal Kenya` in the
+footer opens the hunt after three clicks. The clues lead through About,
+Savannah Bloom and the first Process step before revealing the book prize.
+
+- Edit the `CONFIG` object at the top of `book-hunt.js` to change the final
+  message, title or number of clicks.
+- To remove the game, delete `book-hunt.js` and `book-hunt.css`, then remove
+  their `<script>` and `<link>` tags from the seven HTML pages.
+- To reset a completed test, choose **Reset the hunt** on the final screen or
+  remove the `houseOfGeminiBookHuntV1` value from the browser's local storage.
+
 ---
 
 Built with love for the founder of House of Gemini.

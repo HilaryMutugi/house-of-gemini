@@ -25,10 +25,11 @@ Static HTML, one shared `style.css`, `script.js`. No build step.
 ## Roadmap
 Done (Oct 2026): image compression, mobile hero fix, contrast and text size, nav/footer consistency, Open Graph tags, LocalBusiness data, removed broken brand book PDF links.
 
-Next:
-1. Homepage shows real work (Kimono, Savannah Bloom, Afrifama uniforms, Lizar) instead of generic studio images.
-2. Early split: "Uniforms for schools and organisations" vs "Fashion and custom pieces".
-3. Lizar Schools as a featured case study.
-4. Trust: client logos, 1 to 2 client quotes, Anita on the homepage, Instagram/TikTok links.
-5. Stronger FAQ: minimum order, lead times, coast delivery, deposits.
-6. One consistent positioning line across homepage, About and footer.
+Done (Round 2, Oct 2026): homepage buyer split (Uniforms vs Custom fashion, each with its own WhatsApp message), Lizar Schools featured case study, recent work uses real collection images, Anita named on the homepage, FAQ expanded to six questions, one positioning line across homepage, About, footers and meta.
+
+Positioning line: "Uniforms for schools and organisations, and custom fashion for individuals. Designed and made in Kenya."
+
+Next (waiting on Anita):
+1. FAQ facts: minimum order, typical lead times, deposit terms, delivery to the coast. Do not publish guesses.
+2. Trust: 1 to 2 client quotes, client logos (only clients she confirms), Instagram/TikTok handles.
+3. A real photo of Anita for the homepage story section (currently a studio image).

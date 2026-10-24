@@ -1410,3 +1410,17 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 .maker-hero{padding:10px 0 28px}.maker-hero-grid{grid-template-columns:44fr 56fr;gap:30px;align-items:stretch}.maker-hero-copy{display:flex;flex-direction:column;justify-content:center;padding:12px 0 12px 18px}.maker-hero h1{font-size:clamp(3rem,4.6vw,5.25rem);line-height:.94;margin:14px 0 18px}.maker-hero .lead{max-width:480px;font-size:1rem;line-height:1.55}.maker-hero .actions{gap:10px;margin-top:24px}.maker-hero .actions .btn{min-height:44px;padding:10px 18px;font-size:.82rem}.maker-hero-image{height:clamp(420px,38vw,560px)}.maker-hero-image img{object-position:58% 48%}.maker-hero .image-caption{display:none}.maker-process{padding-top:12px!important}.process-steps{margin-top:10px}.floating-whatsapp::after{display:none}.floating-whatsapp::before{width:22px;height:22px}
 @media(max-width:900px){.maker-hero{padding:8px 0 18px}.maker-hero-grid{gap:20px}.maker-hero-copy{order:0;padding:10px 0 0 14px}.maker-hero-image{order:1;height:420px}.maker-hero h1{font-size:clamp(3rem,8vw,4.5rem)}}
 @media(max-width:650px){.nav-wrap{min-height:82px}.site-header .brand-logo{width:68px;height:68px}.maker-hero h1{font-size:clamp(2.7rem,13vw,4rem);line-height:.96;margin:12px 0 14px}.maker-hero .lead{font-size:.94rem;line-height:1.45}.maker-hero .actions{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}.maker-hero .actions .btn{padding:9px 10px;font-size:.72rem;white-space:nowrap}.maker-hero-image{height:340px}.process-steps article{grid-template-columns:48px 62px 1fr}.floating-whatsapp{right:12px;bottom:12px;width:40px;min-width:40px;height:40px}.floating-whatsapp::before{width:20px;height:20px}}
+
+/* Phase 1 fixes: mobile hero, readable text, contrast */
+:root{--gold-text:#7d5b26}
+.eyebrow,.card-number,.service-row .number,.contact-card small,.process-steps b{color:var(--gold-text)}
+.section-dark .eyebrow,.maker-details .eyebrow,.site-footer .eyebrow,.collection-section-dark .eyebrow,.site-footer .footer-title{color:#d8b273}
+.eyebrow{font-size:.82rem}
+.btn{font-size:.875rem}
+.maker-hero .actions .btn{font-size:.875rem}
+.process-steps p{font-size:.92rem}
+.collection-path small,.work-card span{font-size:.9rem}
+.details-list span,.faq-grid p{font-size:.95rem}
+.maker-cta .eyebrow{color:var(--gold-text)}
+@media(max-width:900px){.maker-hero-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.maker-hero .actions{grid-template-columns:1fr}.maker-hero .actions .btn{font-size:.875rem;white-space:normal;padding:12px 16px}}

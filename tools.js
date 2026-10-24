@@ -120,7 +120,7 @@
 
   function swatches() {
     $("fabricSw").innerHTML = FABRICS.map(([n, c], i) => '<button type="button" class="fs" style="background:' + c + '" aria-label="' + n + '" title="' + n + '" aria-pressed="' + (i === fabric) + '" data-i="' + i + '"></button>').join("");
-    $("trimSw").innerHTML = TRIMS.map(([n, , c], i) => '<button type="button" class="fs" style="background:' + (c === "none" ? "repeating-linear-gradient(135deg,#f1ece2 0 4px,#d9cfbf 4px 5px)" : c) + '" aria-label="' + n + ' trim" title="' + n + '" aria-pressed="' + (i === trim) + '" data-i="' + i + '"></button>').join("");
+    $("trimSw").innerHTML = TRIMS.map(([n, , c], i) => '<button type="button" class="fs" style="background:' + (c === "none" ? "repeating-linear-gradient(135deg,#e9eee7 0 4px,#ced8ce 4px 5px)" : c) + '" aria-label="' + n + ' trim" title="' + n + '" aria-pressed="' + (i === trim) + '" data-i="' + i + '"></button>').join("");
     $("fabName").innerHTML = "<b>" + FABRICS[fabric][0] + "</b>";
     $("trimName").innerHTML = "<b>" + TRIMS[trim][0] + "</b>" + (TRIMS[trim][0] === "Reflective" ? " · high-vis tape" : "");
   }

@@ -10,8 +10,8 @@ Static HTML, one shared `style.css`, `script.js`. No build step.
 - Orders start on WhatsApp: +254 726 411 745. Email: info@houseofgemini.co.ke.
 
 ## Brand
-- Colours (CSS vars in `:root`): cream `#f8f4ec`, paper `#fffdf8`, ink `#171916`, emerald `#173f36`, gold `#b88b45`.
-- Gold for small text on light backgrounds must use `--gold-text` (`#7d5b26`); on emerald use `#d8b273`. Plain `--gold` fails contrast as text.
+- Colours: "Coastal Atelier" palette (Oct 2026), CSS vars in `:root`: cream `#F6F6EF`, paper `#FFFEFA`, ink `#202720`, muted `#536158`, beige (sage tint) `#E9EEE7`, line `#CED8CE`, emerald `#17483D`, gold `#B88B45`, gold-light `#E2C48D`.
+- Gold for small text on light backgrounds must use `--gold-text` (`#73501B`); on emerald use `#d8b273`. Plain `--gold` fails contrast as text. Text on gold buttons is `--ink`, never `--gold-text` (2.4:1 fails).
 - Fonts: Cormorant Garamond (headings), Manrope (body).
 - Copy style: no em dashes. Warm, confident, plain English.
 

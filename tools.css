@@ -6,15 +6,15 @@
 .hog-tools {
   --t-bg: var(--cream, #f8f4ec);
   --t-surface: var(--paper, #fffdf8);
-  --t-sunk: #f1ece2;
-  --t-line: #e3dacb;
+  --t-sunk: var(--beige, #e9eee7);
+  --t-line: var(--line, #ced8ce);
   --t-fg: var(--ink, #171916);
-  --t-muted: #66665f;
+  --t-muted: var(--muted, #536158);
   --t-brand: var(--emerald, #173f36);
-  --t-brand-ink: #f6f1e6;
+  --t-brand-ink: var(--paper, #fffefa);
   --t-accent: var(--gold, #b88b45);
   --t-accent-on-brand: #d8b273;
-  --t-accent-text: #7d5b26;
+  --t-accent-text: var(--gold-text, #73501b);
   --t-accent-soft: #f1e7d1;
   --t-ease: cubic-bezier(.2, .8, .2, 1);
   padding: 34px 0 80px;
@@ -120,9 +120,9 @@
   display: grid; place-items: center; background: var(--t-sunk); color: var(--t-muted); font-weight: 800; font-size: 13px;
 }
 .hog-tools .tile.on .add { background: var(--t-accent); color: #161712; }
-.hog-tools .step { display: flex; align-items: center; justify-content: space-between; background: var(--t-sunk); border-radius: 99px; padding: 3px; position: relative; z-index: 1; }
+.hog-tools .step { display: flex; gap: 2px; grid-template-columns: none; align-items: center; justify-content: space-between; background: var(--t-sunk); border-radius: 99px; padding: 3px; position: relative; z-index: 1; }
 .hog-tools .step button { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 0; background: var(--t-surface); color: var(--t-fg); font-size: 16px; font-weight: 800; line-height: 1; padding: 0; }
-.hog-tools .step input { border: 0; background: none; text-align: center; padding: 0; width: 100%; flex: 1 1 0; min-width: 0; font-weight: 800; font-variant-numeric: tabular-nums; box-shadow: none; }
+.hog-tools .step input { border: 0; background: none; text-align: center; padding: 0; width: 44px; flex: 1 1 44px; min-width: 0; max-width: none; font-weight: 800; font-variant-numeric: tabular-nums; box-shadow: none; }
 
 .hog-tools .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .hog-tools .chip {

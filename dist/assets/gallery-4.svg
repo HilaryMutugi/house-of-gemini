@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs><linearGradient id="d"><stop stop-color="#ece0ce"/><stop offset="1" stop-color="#8b7358"/></linearGradient></defs>
+  <rect width="900" height="1100" fill="url(#d)"/><circle cx="450" cy="500" r="280" fill="none" stroke="#20211f" stroke-width="90" opacity=".65"/><circle cx="450" cy="500" r="80" fill="#b88b45"/>
+  <text x="50%" y="1010" text-anchor="middle" fill="#fff" font-family="Georgia" font-size="38">Branded Apparel Placeholder</text>
+</svg>

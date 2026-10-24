@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs><linearGradient id="b" y2="1"><stop stop-color="#173f36"/><stop offset="1" stop-color="#b88b45"/></linearGradient></defs>
+  <rect width="900" height="1100" fill="url(#b)"/><rect x="245" y="210" width="410" height="660" rx="180" fill="#f8f4ec" opacity=".88"/><path d="M330 430h240v380H330z" fill="#20211f" opacity=".76"/>
+  <text x="50%" y="1010" text-anchor="middle" fill="#fff" font-family="Georgia" font-size="38">School Wear Placeholder</text>
+</svg>

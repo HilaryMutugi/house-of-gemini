@@ -67,6 +67,44 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach(item => item.classList.add("visible"));
   }
 
+  // Stagger the three-step studio process as it enters the viewport.
+  const motionCards = document.querySelectorAll(".motion-card");
+  if (motionCards.length && "IntersectionObserver" in window) {
+    const cardObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -30px 0px" });
+    motionCards.forEach(card => cardObserver.observe(card));
+  } else {
+    motionCards.forEach(card => card.classList.add("is-visible"));
+  }
+
+  // Remove the black matte baked into the legacy process artwork without changing the silhouettes.
+  document.querySelectorAll(".process-icon img").forEach(image => {
+    const cleanMatte = () => {
+      if (!image.naturalWidth || image.dataset.matteCleaned) return;
+      const canvas = document.createElement("canvas");
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      const context = canvas.getContext("2d", { willReadFrequently: true });
+      context.drawImage(image, 0, 0);
+      const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < pixels.data.length; i += 4) {
+        const brightness = Math.max(pixels.data[i], pixels.data[i + 1], pixels.data[i + 2]);
+        if (brightness < 42) pixels.data[i + 3] = 0;
+      }
+      context.putImageData(pixels, 0, 0);
+      image.src = canvas.toDataURL("image/png");
+      image.dataset.matteCleaned = "true";
+    };
+    if (image.complete) cleanMatte();
+    else image.addEventListener("load", cleanMatte, { once: true });
+  });
+
   // Load the large brand-book PDF only when the viewer is near the viewport.
   const brandBookFrame = document.querySelector(".brand-book-viewer iframe[data-src]");
   if (brandBookFrame && window.matchMedia("(min-width: 651px)").matches) {

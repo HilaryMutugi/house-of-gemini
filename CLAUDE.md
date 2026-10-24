@@ -29,6 +29,8 @@ Done (Round 2, Oct 2026): homepage buyer split (Uniforms vs Custom fashion, each
 
 Positioning line: "Uniforms for schools and organisations, and custom fashion for individuals. Designed and made in Kenya."
 
+Order tools (Oct 2026): `order.html` with `tools.css` and `tools.js`. Uniform quote builder, group order invites, order tracker. Prices, lead times, discounts and fabrics live in `CONFIG` at the top of `tools.js`. Tracker reads `orders.json` (public repo, so no customer names or phone numbers). Page is `noindex` and not in the nav until Anita confirms prices; then set `pricesConfirmed: true`, remove the noindex meta and add a nav link.
+
 Next (waiting on Anita):
 1. FAQ facts: minimum order, typical lead times, deposit terms, delivery to the coast. Do not publish guesses.
 2. Trust: 1 to 2 client quotes, client logos (only clients she confirms), Instagram/TikTok handles.

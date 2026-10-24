@@ -1426,3 +1426,42 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 @media(max-width:650px){.maker-hero .actions{grid-template-columns:1fr}.maker-hero .actions .btn{font-size:.875rem;white-space:normal;padding:12px 16px}}
 .brand-book-viewer{min-height:580px}
 @media(max-width:650px){.brand-book-viewer{min-height:440px}.brand-book-fallback img{max-height:380px}}
+
+/* Round 2: buyer split, Lizar case study */
+.home-split{background:var(--cream)}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.split-card{display:grid;grid-template-columns:42% 1fr;background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.split-media{display:block;min-height:100%;overflow:hidden}
+.split-media img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .5s}
+.split-media:hover img{transform:scale(1.03)}
+.split-copy{display:flex;flex-direction:column;padding:28px 26px}
+.split-copy .eyebrow{margin:0}
+.split-copy h3{margin:8px 0 10px;font-size:clamp(2rem,2.8vw,2.6rem)}
+.split-copy>p:not(.eyebrow){margin:0;color:var(--muted);font-size:.95rem}
+.split-copy ul{margin:16px 0 22px;padding:0;list-style:none}
+.split-copy li{padding:9px 0 9px 22px;border-top:1px solid var(--line);font-size:.92rem;position:relative}
+.split-copy li:before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.split-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:auto}
+.home-case{background:var(--emerald);color:#fff}
+.case-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.home-case .eyebrow{color:#d8b273}
+.case-copy h2{margin:10px 0 16px;font-size:clamp(2.3rem,3.8vw,3.9rem);line-height:1}
+.case-copy>p:not(.eyebrow){color:rgba(255,255,255,.78);font-size:1rem}
+.case-points{margin:22px 0 26px;padding:0;list-style:none}
+.case-points li{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.22)}
+.case-points li:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
+.case-points strong{font:600 1.25rem var(--serif);color:#e4d2b5}
+.case-points span{color:rgba(255,255,255,.8);font-size:.92rem;align-self:center}
+.case-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-light-outline{background:transparent;border-color:rgba(255,255,255,.6);color:#fff}
+.btn-light-outline:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.case-media{display:grid;gap:10px}
+.case-cover{width:100%;aspect-ratio:16/9;object-fit:cover;background:#fff}
+.case-thumbs{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:10px}
+.case-thumbs img{width:100%;height:190px;object-fit:contain;background:#fff}
+.story-copy .lead+.lead{margin-top:-4px}
+.faq-grid{grid-template-columns:repeat(3,1fr);gap:0 28px}
+@media(max-width:1100px){.split-grid{grid-template-columns:1fr}.split-card{grid-template-columns:40% 1fr}}
+@media(max-width:900px){.case-grid{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.split-card{grid-template-columns:1fr}.split-media{height:300px}.split-copy{padding:22px 18px}.case-points li{grid-template-columns:1fr;gap:2px}.case-thumbs img{height:130px}.case-actions{display:grid}.case-actions .btn{width:100%;text-align:center}.faq-grid{grid-template-columns:1fr}}
+.case-cover{height:auto;object-fit:contain}

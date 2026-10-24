@@ -1424,3 +1424,5 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 .maker-cta .eyebrow{color:var(--gold-text)}
 @media(max-width:900px){.maker-hero-grid{grid-template-columns:1fr}}
 @media(max-width:650px){.maker-hero .actions{grid-template-columns:1fr}.maker-hero .actions .btn{font-size:.875rem;white-space:normal;padding:12px 16px}}
+.brand-book-viewer{min-height:580px}
+@media(max-width:650px){.brand-book-viewer{min-height:440px}.brand-book-fallback img{max-height:380px}}

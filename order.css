@@ -32,9 +32,9 @@
   .customise-step{display:contents}
   .customise-step>.step-kicker,.customise-step>h2,.customise-step>.availability-note{display:none}
   .customise-step>fieldset{width:100%;min-width:0;margin:0;padding:0}
-  .customise-step>fieldset:nth-of-type(1){order:3}
-  .customise-step>fieldset:nth-of-type(2){order:4}
-  .customise-step>.details-field{order:5}
+  .quote-board>fieldset:nth-of-type(1){order:3}
+  .quote-board>fieldset:nth-of-type(2){order:4}
+  .quote-board>.details-field{order:5}
   .swatch-grid{flex-wrap:nowrap;overflow-x:auto;padding:2px 3px 5px;margin:0 -3px;scrollbar-width:thin}
   .swatch-choice{flex:0 0 50px;min-width:50px;min-height:44px;padding:3px 1px}
   .swatch-choice .swatch{width:32px;height:32px}

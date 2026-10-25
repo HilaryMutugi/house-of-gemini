@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc" class="garment-svg" style="--fabric:#173f36;--trim:#b88b45;--stitch:#f8f4ec">
+<title id="title">Uniform coveralls</title><desc id="desc">Front view of one-piece work coveralls with collar, full-length zipper, chest and thigh pockets, and stitched seams.</desc><style>
+.fabric{fill:var(--fabric,#173f36)} .trim{fill:var(--trim,#b88b45)}
+.stitch{fill:none;stroke:var(--stitch,#f8f4ec);stroke-width:2;stroke-dasharray:3 5;opacity:.82}
+.seam{fill:none;stroke:#10251f;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.52}
+.edge{fill:none;stroke:#fffdf8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.48}
+.shade{fill:#101b17;opacity:.13} .button{fill:#f8f4ec;stroke:#173f36;stroke-width:1.5}
+</style>
+<ellipse cx="200" cy="466" rx="105" ry="12" fill="#171916" opacity=".10"/>
+<path class="shade" d="m136 71 34-20h60l34 20 41 26 39 112-45 17-31-74-6 275h-64l-8-171-8 171h-64l-6-275-31 74-45-17 39-112z"/>
+<path class="fabric" d="m133 67 37-21h60l37 21 40 26 39 112-45 17-31-74-6 275h-65l-7-171-7 171h-65l-6-275-31 74-45-17 39-112z"/>
+<path class="fabric" d="m133 67-40 26-39 112 45 17 45-83zm134 0 40 26 39 112-45 17-45-83z"/>
+<path class="trim" d="m170 44 30 33 30-33-9 45h-42zM197 80h6v336h-6z"/>
+<path class="edge" d="m170 44 30 33 30-33m-30 33v341m-64-238-1 226m130-226 1 226"/>
+<path class="seam" d="M138 190h-32m188 0h-32M132 247h42v49h-42zm94 0h42v49h-42zM131 320h47v55h-47zm91 0h47v55h-47z"/>
+<path class="fabric" d="M132 247h42v49h-42zm94 0h42v49h-42zM131 320h47v55h-47zm91 0h47v55h-47z"/>
+<path class="stitch" d="M137 252h32v39h-32zm104 0h32v39h-32zm-104 74h37v44h-37zm91 0h37v44h-37zM185 92v120m30-120v120"/>
+<circle class="button" cx="200" cy="114" r="3.5"/><circle class="button" cx="200" cy="141" r="3.5"/><circle class="button" cx="200" cy="168" r="3.5"/></svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc" class="garment-svg" style="--fabric:#173f36;--trim:#b88b45;--stitch:#f8f4ec">
+<title id="title">Uniform shirt</title><desc id="desc">Front view of a short-sleeved tailored uniform shirt with collar, buttons, pockets and stitched seams.</desc><style>
+.fabric{fill:var(--fabric,#173f36)} .trim{fill:var(--trim,#b88b45)}
+.stitch{fill:none;stroke:var(--stitch,#f8f4ec);stroke-width:2;stroke-dasharray:3 5;opacity:.82}
+.seam{fill:none;stroke:#10251f;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.52}
+.edge{fill:none;stroke:#fffdf8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.48}
+.shade{fill:#101b17;opacity:.13} .button{fill:#f8f4ec;stroke:#173f36;stroke-width:1.5}
+</style>
+<ellipse cx="200" cy="466" rx="105" ry="12" fill="#171916" opacity=".10"/>
+<path class="shade" d="M128 111 166 91h68l38 20 52 29-28 83-29-15v218H133V208l-29 15-28-83z"/>
+<path class="fabric" d="m129 107 38-20h66l38 20 48 28-27 76-29-14v219H137V197l-29 14-27-76z"/>
+<path class="fabric" d="m128 108-48 28-26 101 42 14 34-81zM272 108l48 28 26 101-42 14-34-81z"/>
+<path class="trim" d="m168 88 32 30 32-30-10 48h-44z"/>
+<path class="edge" d="m168 88 32 30 32-30m-32 30v298m-62-176v177m124-177v177"/>
+<path class="seam" d="M138 202h-30m184 0h-30M200 120v271M81 137l29 69m209-69-29 69"/>
+<path class="stitch" d="M145 214h39v42h-39zm72 0h39v42h-39zM145 269v108h110V269"/>
+<path class="fabric" d="M145 214h39v42h-39zm72 0h39v42h-39z"/>
+<circle class="button" cx="200" cy="162" r="4"/><circle class="button" cx="200" cy="190" r="4"/><circle class="button" cx="200" cy="218" r="4"/><circle class="button" cx="200" cy="246" r="4"/><circle class="button" cx="200" cy="274" r="4"/>
+<path class="trim" d="M182 120h36v5h-36z"/></svg>

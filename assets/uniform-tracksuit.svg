@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc" class="garment-svg" style="--fabric:#173f36;--trim:#b88b45;--stitch:#f8f4ec">
+<title id="title">Uniform tracksuit</title><desc id="desc">Front view of a matching tracksuit jacket and trousers with contrast piping, zip and stitched seams.</desc><style>
+.fabric{fill:var(--fabric,#173f36)} .trim{fill:var(--trim,#b88b45)}
+.stitch{fill:none;stroke:var(--stitch,#f8f4ec);stroke-width:2;stroke-dasharray:3 5;opacity:.82}
+.seam{fill:none;stroke:#10251f;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.52}
+.edge{fill:none;stroke:#fffdf8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.48}
+.shade{fill:#101b17;opacity:.13} .button{fill:#f8f4ec;stroke:#173f36;stroke-width:1.5}
+</style>
+<ellipse cx="200" cy="466" rx="105" ry="12" fill="#171916" opacity=".10"/>
+<g transform="translate(-14 0) scale(.86 1)">
+<path class="shade" d="m126 104 34-19h55l31 19 37 25-20 77-25-14v153H132V192l-25 14-20-77z"/>
+<path class="fabric" d="m123 100 37-21h55l31 21 36 25-20 75-25-13v157H132V187l-25 13-20-75z"/>
+<path class="fabric" d="m123 100-36 25-23 80 34 14 35-65zm123 0 36 25 23 80-34 14-35-65z"/>
+<path class="trim" d="M160 77h55v17h-55zM187 96h6v202h-6zM134 182h24v6h-24zm99 0h24v6h-24z"/>
+<path class="edge" d="m160 77 27 30 28-30m-28 30v189m-53-82v109m106-109v109"/>
+<path class="stitch" d="M139 194h36v42h-36zm64 0h36v42h-36zM138 275h100"/>
+<circle class="button" cx="190" cy="138" r="3"/><circle class="button" cx="190" cy="158" r="3"/>
+</g>
+<g transform="translate(183 0) scale(.72 1)">
+<path class="shade" d="M14 84h145l-9 114-3 214H91l-5-174-7 174H18l-3-214z"/>
+<path class="fabric" d="M11 80h151l-10 118-3 214H92l-6-171-7 171H14l-3-214z"/>
+<path class="trim" d="M11 80h151v15H11z"/>
+<path class="edge" d="M16 102v290m60-208-3 207m73-207 3 207"/>
+<path class="stitch" d="M22 218v174m119-174v174"/>
+<path class="seam" d="M22 211h55m36 0h24M18 390h58m19 0h58"/>
+</g></svg>

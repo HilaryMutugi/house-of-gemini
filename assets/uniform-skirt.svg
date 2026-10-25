@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc" class="garment-svg" style="--fabric:#173f36;--trim:#b88b45;--stitch:#f8f4ec">
+<title id="title">Uniform skirt</title><desc id="desc">Front view of a knee-length tailored uniform skirt with waistband, neat pleats and stitched seams.</desc><style>
+.fabric{fill:var(--fabric,#173f36)} .trim{fill:var(--trim,#b88b45)}
+.stitch{fill:none;stroke:var(--stitch,#f8f4ec);stroke-width:2;stroke-dasharray:3 5;opacity:.82}
+.seam{fill:none;stroke:#10251f;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.52}
+.edge{fill:none;stroke:#fffdf8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.48}
+.shade{fill:#101b17;opacity:.13} .button{fill:#f8f4ec;stroke:#173f36;stroke-width:1.5}
+</style>
+<ellipse cx="200" cy="466" rx="105" ry="12" fill="#171916" opacity=".10"/>
+<path class="shade" d="M125 78h150l11 50 43 315H76l43-315z"/>
+<path class="fabric" d="M122 76h156l10 53 40 310H72l40-310z"/>
+<path class="trim" d="M122 76h156v23H122z"/>
+<path class="fabric" d="M112 129h176l-17 83-56 38-15-38-15 38-56-38z"/>
+<path class="edge" d="M123 80h154M112 129h176m-88 0v83m-73-83 13 82m135-82-13 82M77 432h246"/>
+<path class="seam" d="M200 99v111m-74-65 13 68m135-68-13 68M121 127l55 85m103-85-55 85"/>
+<path class="stitch" d="M90 420h220M132 112v30m136-30v30"/>
+<circle class="button" cx="200" cy="87" r="4"/></svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc" class="garment-svg" style="--fabric:#173f36;--trim:#b88b45;--stitch:#f8f4ec">
+<title id="title">Uniform trousers</title><desc id="desc">Front view of tailored uniform trousers with waistband, belt loops, creases and stitched hems.</desc><style>
+.fabric{fill:var(--fabric,#173f36)} .trim{fill:var(--trim,#b88b45)}
+.stitch{fill:none;stroke:var(--stitch,#f8f4ec);stroke-width:2;stroke-dasharray:3 5;opacity:.82}
+.seam{fill:none;stroke:#10251f;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.52}
+.edge{fill:none;stroke:#fffdf8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.48}
+.shade{fill:#101b17;opacity:.13} .button{fill:#f8f4ec;stroke:#173f36;stroke-width:1.5}
+</style>
+<ellipse cx="200" cy="466" rx="105" ry="12" fill="#171916" opacity=".10"/>
+<path class="shade" d="M119 82h162l-12 144-3 224h-68l-8-177-8 177h-68l-3-224z"/>
+<path class="fabric" d="M116 78h168l-13 150-3 222h-69l-8-173-8 173h-69l-3-222z"/>
+<path class="trim" d="M116 78h168v20H116z"/>
+<path class="fabric" d="M119 98h162l-14 129h-61l-8-58-8 58h-61z"/>
+<path class="edge" d="M120 83h160m-80 87 8 220m-82-156 8 136m150-136-8 136"/>
+<path class="seam" d="M200 168v56m-68 8h53m30 0h53M128 443h61m22 0h61M140 98v20m34-20v20m52-20v20m34-20v20"/>
+<path class="stitch" d="M127 248v182m146-182v182M194 178v49m12-49v49"/>
+<path class="fabric" d="M147 120h32v38h-32zm74 0h32v38h-32z"/>
+<path class="edge" d="M147 120h32v38h-32zm74 0h32v38h-32z"/>
+<circle class="button" cx="200" cy="89" r="4"/></svg>

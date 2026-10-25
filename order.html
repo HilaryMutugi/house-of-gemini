@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Build a uniform quote, join a group order or track a House of Gemini order.">
+  <title>Order | House of Gemini</title>
+  <link rel="icon" href="assets/favicon-emerald-circle.png">
+  <link rel="stylesheet" href="style.css?v=order-1">
+  <link rel="stylesheet" href="order.css?v=order-1">
+</head>
+<body class="order-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html" aria-label="House of Gemini home"><img class="brand-logo" src="assets/house-of-gemini-logo.png" alt="House of Gemini"></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="collections.html">Collections</a><a href="services.html">Services</a><a href="process.html">Process</a><a class="active" href="order.html">Order</a><a href="contact.html">Contact</a><a class="btn btn-small" href="https://wa.me/254726411745?text=Hello%20House%20of%20Gemini%2C%20I%27d%20like%20to%20start%20an%20order." target="_blank" rel="noopener">WhatsApp us</a></nav></div></header>
+  <main id="main">
+    <section class="order-hero"><div class="container"><p class="eyebrow">The studio workbench</p><h1>Make it clear.<br><em>Make it yours.</em></h1><p class="order-intro">Build a uniform quote, gather a group order or check where your piece is.</p></div></section>
+    <section class="order-workbench"><div class="container">
+      <div class="order-tabs" role="tablist" aria-label="Order tools">
+        <button class="order-tab is-active" role="tab" aria-selected="true" aria-controls="uniform-panel" id="uniform-tab" data-panel="uniform-panel"><span>01</span> Uniform quote</button>
+        <button class="order-tab" role="tab" aria-selected="false" aria-controls="group-panel" id="group-tab" data-panel="group-panel"><span>02</span> Group order</button>
+        <button class="order-tab" role="tab" aria-selected="false" aria-controls="tracker-panel" id="tracker-tab" data-panel="tracker-panel"><span>03</span> Track order</button>
+      </div>
+
+      <section class="tool-panel is-active" id="uniform-panel" role="tabpanel" aria-labelledby="uniform-tab">
+        <div class="panel-heading"><div><p class="eyebrow">Bulk uniforms & workwear</p><h2>Build your brief.</h2></div><span class="preview-badge">Preview prices</span></div>
+        <div class="uniform-builder">
+          <div class="builder-controls">
+            <fieldset><legend>Garment</legend><div class="choice-grid garment-grid"><label><input type="radio" name="garment" value="Shirt / blouse" checked><span>Shirt / blouse</span></label><label><input type="radio" name="garment" value="Trousers / skirt"><span>Trousers / skirt</span></label><label><input type="radio" name="garment" value="Dress"><span>Dress</span></label><label><input type="radio" name="garment" value="Blazer"><span>Blazer</span></label><label><input type="radio" name="garment" value="Sweater"><span>Sweater</span></label><label><input type="radio" name="garment" value="Coveralls"><span>Coveralls</span></label><label><input type="radio" name="garment" value="Tracksuit"><span>Tracksuit</span></label></div></fieldset>
+            <fieldset><legend>Fabric colour</legend><div class="swatch-grid"><label><input type="radio" name="colour" value="Forest green" data-colour="#173F36" checked><span class="swatch forest"></span><small>Forest</small></label><label><input type="radio" name="colour" value="Navy" data-colour="#1F365E"><span class="swatch navy"></span><small>Navy</small></label><label><input type="radio" name="colour" value="Black" data-colour="#202124"><span class="swatch black"></span><small>Black</small></label><label><input type="radio" name="colour" value="Khaki" data-colour="#B9A477"><span class="swatch khaki"></span><small>Khaki</small></label><label><input type="radio" name="colour" value="Maroon" data-colour="#6A2431"><span class="swatch maroon"></span><small>Maroon</small></label><label><input type="radio" name="colour" value="Royal blue" data-colour="#2855A4"><span class="swatch royal"></span><small>Royal</small></label><label><input type="radio" name="colour" value="Grey" data-colour="#8B8E8C"><span class="swatch grey"></span><small>Grey</small></label><label><input type="radio" name="colour" value="White" data-colour="#F6F4EC"><span class="swatch white"></span><small>White</small></label></div></fieldset>
+            <fieldset><legend>Trim</legend><div class="inline-choices"><label><input type="radio" name="trim" value="None" checked><span>None</span></label><label><input type="radio" name="trim" value="Gold"><span>Gold</span></label><label><input type="radio" name="trim" value="Reflective"><span>Reflective</span></label><label><input type="radio" name="trim" value="Red"><span>Red</span></label></div></fieldset>
+            <fieldset><legend>Add-ons</legend><div class="checks"><label><input type="checkbox" name="logo" value="Embroidered logo"><span>Embroidered logo</span></label><label><input type="checkbox" name="tags" value="Name tags"><span>Name tags</span></label></div></fieldset>
+            <label class="quantity-field">Quantity <input id="uniform-qty" type="number" min="1" inputmode="numeric" value="24"><span>pieces</span></label>
+          </div>
+          <div class="quote-side"><div class="garment-stage"><div class="garment-visual" aria-label="Live garment preview"><div class="garment-body"></div><div class="garment-sleeve left"></div><div class="garment-sleeve right"></div><div class="garment-trim"></div><div class="garment-collar"></div></div><span class="stage-note">live fabric preview</span></div><div class="hangtag"><span class="tag-hole"></span><p class="tag-kicker">House of Gemini</p><strong id="quote-total">KES 84,960</strong><span id="quote-unit">KES 3,540 / piece</span><div class="tag-rule"></div><p id="quote-summary">24 × Shirt / blouse<br>Forest green · No trim</p><small id="quote-turnaround">Estimated turnaround: 3–4 weeks</small><a class="btn" id="quote-whatsapp" href="#" target="_blank" rel="noopener">Send this quote on WhatsApp <span>↗</span></a></div></div>
+        </div>
+        <div class="discount-strip"><span>Volume pricing</span><span>1–19 · standard</span><span>20–49 · 5% off</span><span>50+ · 10% off</span></div>
+      </section>
+
+      <section class="tool-panel" id="group-panel" role="tabpanel" aria-labelledby="group-tab" hidden>
+        <div class="panel-heading"><div><p class="eyebrow">Weddings, teams & families</p><h2>Bring everyone in.</h2></div><span class="panel-mark">↗ 01</span></div>
+        <div class="group-layout"><form class="studio-form" id="group-form"><label>Event or group name<input name="event" placeholder="e.g. Anita & Brian's wedding" required></label><label>Fabric or style note<textarea name="style" rows="3" placeholder="e.g. Rust Ankara, matching shirts"></textarea></label><label>Deadline<input name="deadline" type="date" required></label><button class="btn" type="submit">Create group link <span>→</span></button><p class="form-message" id="group-message" aria-live="polite"></p></form><div class="group-result" id="group-result" hidden><p class="eyebrow">Your group is ready</p><div class="group-code">HOG-<strong id="group-code">MAYA24</strong></div><p>Share this invite. Each guest adds their name, size or measurements and a note.</p><div class="share-link"><span id="invite-link">houseofgemini.co.ke/join/MAYA24</span><button type="button" id="copy-invite">Copy</button></div><div class="date-rail"><div><b>Measurements due</b><span>We’ll confirm this with you</span></div><div><b>Fitting</b><span>Scheduled after first sample</span></div><div><b>Collection</b><span id="collection-date">Before your deadline</span></div></div><a class="btn" id="group-whatsapp" href="#" target="_blank" rel="noopener">Send group to WhatsApp <span>↗</span></a></div></div>
+      </section>
+
+      <section class="tool-panel" id="tracker-panel" role="tabpanel" aria-labelledby="tracker-tab" hidden>
+        <div class="panel-heading"><div><p class="eyebrow">Made-to-order progress</p><h2>Follow the stitch.</h2></div><span class="ticket-stamp">JOB TICKET</span></div>
+        <form class="tracker-search" id="tracker-form"><label for="order-code">Order code</label><input id="order-code" name="code" placeholder="HOG-0001" pattern="HOG-[0-9]{4}" required><button class="btn" type="submit">Check order <span>→</span></button></form><p class="error-message" id="tracker-error" role="alert" hidden>We couldn’t find that code. Check the format and try again.</p>
+        <div class="ticket" id="ticket-result" hidden><div class="ticket-top"><div><span class="ticket-label">Order</span><strong id="ticket-code">HOG-0001</strong></div><div><span class="ticket-label">Expected ready</span><strong>18 Nov 2026</strong></div></div><div class="progress-line"><div class="needle">⌁</div><ol><li class="done"><b>Confirmed</b><small>28 Oct</small></li><li class="done"><b>Fabric sourced</b><small>30 Oct</small></li><li class="active"><b>Cutting</b><small>03 Nov</small></li><li><b>Sewing</b><small>Next</small></li><li><b>Finishing</b><small>—</small></li><li><b>Ready</b><small>18 Nov</small></li></ol></div><div class="ticket-bottom"><span>Last updated today · Nairobi studio</span><a class="btn btn-outline" id="tracker-whatsapp" href="#" target="_blank" rel="noopener">Ask about my order <span>↗</span></a></div></div>
+      </section>
+    </div></section>
+    <section class="palette-note"><div class="container"><p class="eyebrow">Colour direction</p><h2>Emerald stays the anchor.</h2><div class="palette-grid"><div><span class="palette-chip emerald-chip"></span><b>Recommended</b><small>Emerald + gold: recognisable, warm, high-contrast and calm beside vivid Ankara.</small></div><div><span class="palette-chip teal-chip"></span><b>Alternative</b><small>Ankara teal + saffron: more graphic and energetic, best for campaign moments.</small></div><div><span class="palette-chip charcoal-chip"></span><b>Alternative</b><small>Charcoal + brass: most luxurious, but less welcoming for school and family orders.</small></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><span>© <span data-year></span> House of Gemini. All rights reserved.</span><span>Nairobi · Coastal Kenya</span></div></footer>
+  <script src="script.js"></script><script src="order.js"></script>
+</body></html>

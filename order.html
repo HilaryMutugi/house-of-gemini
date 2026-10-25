@@ -1,143 +1,53 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Price a uniform order, organise matching outfits for a group, or track your House of Gemini order."><meta name="robots" content="noindex"><title>Order tools | House of Gemini</title><link rel="canonical" href="https://houseofgemini.co.ke/order.html"><meta property="og:type" content="website"><meta property="og:site_name" content="House of Gemini"><meta property="og:title" content="Order tools | House of Gemini"><meta property="og:description" content="Price a uniform order, organise matching outfits for a group, or track your order."><meta property="og:url" content="https://houseofgemini.co.ke/order.html"><meta property="og:image" content="https://houseofgemini.co.ke/assets/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#173f36"><link rel="icon" type="image/png" href="assets/favicon-emerald-circle.png?v=12"><link rel="stylesheet" href="style.css?v=coastal-1"><link rel="stylesheet" href="tools.css?v=2"><link rel="stylesheet" href="book-hunt.css"></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img class="brand-logo" src="assets/house-of-gemini-logo.png" alt="House of Gemini"></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="collections.html">Collections</a><a href="portfolio.html">Portfolio</a><a href="process.html">Process</a><a class="btn btn-small" href="contact.html">Start Your Order</a></nav></div></header>
-<main id="main" class="hog-tools"><div class="container">
-  <div class="tabbar"><div class="tabs" role="tablist" aria-label="Order tools">
-    <button type="button" role="tab" id="t-quote" aria-controls="quote" aria-selected="true">Uniform quote</button>
-    <button type="button" role="tab" id="t-group" aria-controls="group" aria-selected="false">Group order</button>
-    <button type="button" role="tab" id="t-track" aria-controls="track" aria-selected="false">Track order</button>
-  </div></div>
-
-  <section class="panel" id="quote" role="tabpanel" aria-labelledby="t-quote">
-    <div class="grid">
-      <div class="col">
-        <div class="h"><h1>Build your uniform</h1><p>Designed once, made to match every reorder.</p></div>
-        <div class="studio">
-          <div>
-            <div class="preview"><span class="backtag" id="backTag">+ back logo</span><svg viewBox="0 0 220 260" id="garment" role="img" aria-label="Garment preview"></svg></div>
-            <div class="pname" id="pName"></div>
-          </div>
-          <div class="blk" style="gap:16px">
-            <div class="blk"><span class="k">Fabric</span><div class="swatches" id="fabricSw"></div><div class="fsname" id="fabName"></div></div>
-            <div class="blk"><span class="k">Trim</span><div class="swatches" id="trimSw"></div><div class="fsname" id="trimName"></div></div>
-          </div>
-        </div>
-        <div class="blk"><span class="k">Pieces</span><div class="tiles" id="tiles"></div></div>
-        <div class="blk">
-          <span class="k">Logo</span>
-          <div class="chips" id="brandChips"><button type="button" class="chip" data-v="none">None</button><button type="button" class="chip" data-v="heat">Heat press</button><button type="button" class="chip" data-v="emb">Embroidery</button></div>
-          <div class="chips" id="posChips"><button type="button" class="chip" data-v="1">Chest</button><button type="button" class="chip" data-v="2">Chest + back</button><button type="button" class="chip" data-v="3">Chest, back, sleeve</button></div>
-          <label class="toggle" id="newWrap"><input type="checkbox" id="newLogo" checked> New logo</label>
-        </div>
-        <div class="two">
-          <div><label class="sr" for="org">School or organisation</label><input id="org" placeholder="School or organisation" autocomplete="organization"></div>
-          <div><label class="sr" for="needBy">Needed by</label><input id="needBy" type="date" title="Needed by"></div>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Build a uniform quote, join a group order or track a House of Gemini order.">
+  <title>Order | House of Gemini</title>
+  <link rel="icon" href="assets/favicon-emerald-circle.png">
+  <link rel="stylesheet" href="style.css?v=order-1">
+  <link rel="stylesheet" href="order.css?v=order-1">
+</head>
+<body class="order-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html" aria-label="House of Gemini home"><img class="brand-logo" src="assets/house-of-gemini-logo.png" alt="House of Gemini"></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="collections.html">Collections</a><a href="services.html">Services</a><a href="process.html">Process</a><a class="active" href="order.html">Order</a><a href="contact.html">Contact</a><a class="btn btn-small" href="https://wa.me/254726411745?text=Hello%20House%20of%20Gemini%2C%20I%27d%20like%20to%20start%20an%20order." target="_blank" rel="noopener">WhatsApp us</a></nav></div></header>
+  <main id="main">
+    <section class="order-hero"><div class="container"><p class="eyebrow">The studio workbench</p><h1>Make it clear.<br><em>Make it yours.</em></h1><p class="order-intro">Build a uniform quote, gather a group order or check where your piece is.</p></div></section>
+    <section class="order-workbench"><div class="container">
+      <div class="order-tabs" role="tablist" aria-label="Order tools">
+        <button class="order-tab is-active" role="tab" aria-selected="true" aria-controls="uniform-panel" id="uniform-tab" data-panel="uniform-panel"><span>01</span> Uniform quote</button>
+        <button class="order-tab" role="tab" aria-selected="false" aria-controls="group-panel" id="group-tab" data-panel="group-panel"><span>02</span> Group order</button>
+        <button class="order-tab" role="tab" aria-selected="false" aria-controls="tracker-panel" id="tracker-tab" data-panel="tracker-panel"><span>03</span> Track order</button>
       </div>
-      <aside class="tag" aria-live="polite">
-        <span class="k">Estimate</span>
-        <div class="big" id="qRange">0</div>
-        <div class="dim" id="qPer"></div>
-        <dl class="spec" id="qSpec"></dl>
-        <div class="alert" id="qWarn" hidden></div>
-        <a class="cta" id="qWa" href="https://wa.me/254726411745" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>Get a firm quote</a>
-        <p class="fine" id="qFine"></p>
-        <details><summary>Breakdown</summary><dl class="rows" id="qBreak"></dl></details>
-        <div class="zig thin" aria-hidden="true"></div>
-      </aside>
-    </div>
-  </section>
 
-  <section class="panel" id="group" role="tabpanel" aria-labelledby="t-group" hidden>
-    <div class="grid" id="gGrid">
-      <div class="col">
-        <div id="gSetup" class="col">
-          <div class="h"><h2>Dress the whole group</h2><p>Weddings, photoshoots, church, chamas. One link, every size.</p></div>
-          <div class="blk">
-            <div class="two">
-              <div><label class="sr" for="gName">Event name</label><input id="gName" placeholder="Event name, e.g. Wanjiru and Otieno's wedding"></div>
-              <div><label class="sr" for="gType">Occasion</label><select id="gType"><option>Wedding</option><option>Photoshoot</option><option>Church</option><option>Chama</option><option>Corporate</option><option>Graduation</option></select></div>
-            </div>
-            <div class="two">
-              <div><label class="sr" for="gDate">Event date</label><input id="gDate" type="date" title="Event date"></div>
-              <div class="counter"><span>People</span><span class="step"><button type="button" id="gMinus" aria-label="Fewer people">−</button><label class="sr" for="gCount">People</label><input id="gCount" type="number" value="12" min="2" max="300"><button type="button" id="gPlus" aria-label="More people">+</button></span></div>
-            </div>
+      <section class="tool-panel is-active" id="uniform-panel" role="tabpanel" aria-labelledby="uniform-tab">
+        <div class="panel-heading"><div><p class="eyebrow">Bulk uniforms & workwear</p><h2>Build your brief.</h2></div><span class="preview-badge">Preview prices</span></div>
+        <div class="uniform-builder">
+          <div class="builder-controls">
+            <fieldset><legend>Garment</legend><div class="choice-grid garment-grid"><label><input type="radio" name="garment" value="Shirt / blouse" checked><span>Shirt / blouse</span></label><label><input type="radio" name="garment" value="Trousers / skirt"><span>Trousers / skirt</span></label><label><input type="radio" name="garment" value="Dress"><span>Dress</span></label><label><input type="radio" name="garment" value="Blazer"><span>Blazer</span></label><label><input type="radio" name="garment" value="Sweater"><span>Sweater</span></label><label><input type="radio" name="garment" value="Coveralls"><span>Coveralls</span></label><label><input type="radio" name="garment" value="Tracksuit"><span>Tracksuit</span></label></div></fieldset>
+            <fieldset><legend>Fabric colour</legend><div class="swatch-grid"><label><input type="radio" name="colour" value="Forest green" data-colour="#173F36" checked><span class="swatch forest"></span><small>Forest</small></label><label><input type="radio" name="colour" value="Navy" data-colour="#1F365E"><span class="swatch navy"></span><small>Navy</small></label><label><input type="radio" name="colour" value="Black" data-colour="#202124"><span class="swatch black"></span><small>Black</small></label><label><input type="radio" name="colour" value="Khaki" data-colour="#B9A477"><span class="swatch khaki"></span><small>Khaki</small></label><label><input type="radio" name="colour" value="Maroon" data-colour="#6A2431"><span class="swatch maroon"></span><small>Maroon</small></label><label><input type="radio" name="colour" value="Royal blue" data-colour="#2855A4"><span class="swatch royal"></span><small>Royal</small></label><label><input type="radio" name="colour" value="Grey" data-colour="#8B8E8C"><span class="swatch grey"></span><small>Grey</small></label><label><input type="radio" name="colour" value="White" data-colour="#F6F4EC"><span class="swatch white"></span><small>White</small></label></div></fieldset>
+            <fieldset><legend>Trim</legend><div class="inline-choices"><label><input type="radio" name="trim" value="None" checked><span>None</span></label><label><input type="radio" name="trim" value="Gold"><span>Gold</span></label><label><input type="radio" name="trim" value="Reflective"><span>Reflective</span></label><label><input type="radio" name="trim" value="Red"><span>Red</span></label></div></fieldset>
+            <fieldset><legend>Add-ons</legend><div class="checks"><label><input type="checkbox" name="logo" value="Embroidered logo"><span>Embroidered logo</span></label><label><input type="checkbox" name="tags" value="Name tags"><span>Name tags</span></label></div></fieldset>
+            <label class="quantity-field">Quantity <input id="uniform-qty" type="number" min="1" inputmode="numeric" value="24"><span>pieces</span></label>
           </div>
-          <div class="blk">
-            <span class="k">Look</span>
-            <div class="chips" id="lookChips"><button type="button" class="chip" data-v="match">Matching</button><button type="button" class="chip" data-v="coord">Same fabric, own style</button></div>
-            <span class="k" style="margin-top:6px">Fabric</span>
-            <div class="chips" id="fabChips"><button type="button" class="chip" data-v="us">We source it</button><button type="button" class="chip" data-v="own">Bring your own</button></div>
-          </div>
+          <div class="quote-side"><div class="garment-stage"><div class="garment-visual" aria-label="Live garment preview"><div class="garment-body"></div><div class="garment-sleeve left"></div><div class="garment-sleeve right"></div><div class="garment-trim"></div><div class="garment-collar"></div></div><span class="stage-note">live fabric preview</span></div><div class="hangtag"><span class="tag-hole"></span><p class="tag-kicker">House of Gemini</p><strong id="quote-total">KES 84,960</strong><span id="quote-unit">KES 3,540 / piece</span><div class="tag-rule"></div><p id="quote-summary">24 × Shirt / blouse<br>Forest green · No trim</p><small id="quote-turnaround">Estimated turnaround: 3–4 weeks</small><a class="btn" id="quote-whatsapp" href="#" target="_blank" rel="noopener">Send this quote on WhatsApp <span>↗</span></a></div></div>
         </div>
-        <form class="join" id="mform" novalidate>
-          <span class="k" id="mSub">Group order</span>
-          <h2 id="mTitle">Join the group</h2>
-          <div class="two">
-            <div><label class="sr" for="mName">Your name</label><input id="mName" placeholder="Your name" autocomplete="name"></div>
-            <div id="mStyleBox"><label class="sr" for="mStyle">Style</label><select id="mStyle"><option>Dress</option><option>Kimono set</option><option>Shirt</option><option>Shirt and trouser</option><option>Kids outfit</option></select></div>
-          </div>
-          <div id="stdBox"><label class="sr" for="mSize">Size</label><select id="mSize"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option><option>Child 4 to 6</option><option>Child 7 to 10</option></select></div>
-          <div id="cmBox" class="four" hidden>
-            <label class="tape"><span>Chest</span><input id="cChest" type="number" inputmode="decimal" placeholder="cm"></label>
-            <label class="tape"><span>Waist</span><input id="cWaist" type="number" inputmode="decimal" placeholder="cm"></label>
-            <label class="tape"><span>Hips</span><input id="cHips" type="number" inputmode="decimal" placeholder="cm"></label>
-            <label class="tape"><span>Length</span><input id="cLen" type="number" inputmode="decimal" placeholder="cm"></label>
-          </div>
-          <button type="button" class="linkbtn" id="modeBtn">Use my measurements</button>
-          <div class="err" id="mErr" hidden></div>
-          <button class="tbtn" type="submit">Send my size on WhatsApp</button>
-        </form>
-      </div>
-      <aside class="tag" id="gTag" aria-live="polite">
-        <span class="k">Group code</span>
-        <div class="code" id="gCode">HOG</div>
-        <div class="alert" id="gWarn" hidden></div>
-        <dl class="spec" id="gDates"></dl>
-        <div style="display:grid;gap:10px">
-          <a class="cta" id="gWa" href="https://wa.me/254726411745" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg>Book this group</a>
-          <button type="button" class="cta ghost" id="gCopy">Copy invite</button>
-        </div>
-        <p class="fine">Guests open the invite, add their size and send it to us. <a id="gPreview" href="#" target="_blank" rel="noopener" style="text-decoration:underline">See what guests see</a></p>
-        <div class="zig thin" aria-hidden="true"></div>
-      </aside>
-    </div>
-  </section>
+        <div class="discount-strip"><span>Volume pricing</span><span>1–19 · standard</span><span>20–49 · 5% off</span><span>50+ · 10% off</span></div>
+      </section>
 
-  <section class="panel" id="track" role="tabpanel" aria-labelledby="t-track" hidden>
-    <div class="col" style="gap:16px">
-      <div class="h" style="text-align:center;justify-items:center"><h2>Where is my order?</h2><p>Every piece, from first cut to final press.</p></div>
-      <form class="search" id="tform" novalidate>
-        <label class="sr" for="orderNo">Order number</label>
-        <input id="orderNo" placeholder="HOG-0001" autocomplete="off">
-        <button class="tbtn" type="submit">Track</button>
-      </form>
-      <p class="empty">Your order number is on your WhatsApp confirmation.</p>
-      <p class="err terr" id="tErr" hidden></p>
-      <article class="ticket" id="ticket" aria-live="polite" hidden>
-        <div class="stub" id="stub">
-          <div><span class="k">Job ticket</span><div class="no" id="tNo"></div></div>
-          <span class="pill" id="tReady"></span>
-          <div class="zig" aria-hidden="true"></div>
-        </div>
-        <div class="tmain">
-          <h2 id="tItem"></h2>
-          <div class="track" id="tTrack">
-            <span class="rail"></span><span class="fill" id="tFill"></span>
-            <span class="needle" id="tNeedle" aria-hidden="true"><svg viewBox="0 0 34 40"><path d="M6 36 L28 6" stroke="#f6f1e6" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="26.5" cy="8" rx="1.6" ry="3" transform="rotate(37 26.5 8)" fill="#173f36"/><path d="M27 7 C 32 14, 22 18, 30 30" fill="none" stroke="#d8b273" stroke-width="1.6"/></svg></span>
-          </div>
-          <p class="note" id="tNote"></p>
-          <a class="cta ghost" id="tWa" href="https://wa.me/254726411745" target="_blank" rel="noopener" style="justify-self:start">Ask about this order</a>
-        </div>
-      </article>
-    </div>
-  </section>
-</div></main>
-<footer class="site-footer"><div class="container">
-  <div class="footer-editorial-grid">
-    <div class="footer-brand-column"><a class="brand" href="index.html"><img class="brand-logo" src="assets/house-of-gemini-logo.png" alt="House of Gemini"></a><p>Uniforms for schools and organisations, and custom fashion for individuals. Designed and made in Kenya.</p></div>
-    <div class="footer-nav-column"><p class="footer-title">Explore</p><nav class="footer-simple-links" aria-label="Footer navigation"><a href="about.html">About</a><a href="collections.html">Collections</a><a href="portfolio.html">Portfolio</a><a href="process.html">Process</a></nav></div>
-    <div class="footer-services-column"><p class="footer-title">Services</p><div class="footer-simple-links"><a href="collections.html#professional-uniform">Corporate uniforms</a><a href="collections.html#school-uniform">School wear</a><a href="services.html">Branding & apparel</a><a href="collections.html#signature-elegance">Custom clothing</a></div></div>
-    <div class="footer-contact-column"><p class="footer-title">Contact</p><div class="footer-contact-lines"><a href="tel:+254726411745">+254 726 411 745</a><a href="mailto:info@houseofgemini.co.ke">info@houseofgemini.co.ke</a><span class="footer-place">Nairobi</span><span class="footer-place">Mariakani, Kilifi</span></div></div>
-  </div>
-  <div class="footer-bottom"><span>© <span data-year></span> House of Gemini. All rights reserved.</span><span class="footer-region">Nairobi · Coastal Kenya</span></div>
-</div></footer><a class="floating-whatsapp" href="https://wa.me/254726411745?text=Hello%20House%20of%20Gemini%2C%20I%27d%20like%20to%20start%20an%20order." aria-label="Chat on WhatsApp">WA</a><script src="script.js"></script><script src="tools.js?v=2"></script><script src="book-hunt.js"></script></body></html>
+      <section class="tool-panel" id="group-panel" role="tabpanel" aria-labelledby="group-tab" hidden>
+        <div class="panel-heading"><div><p class="eyebrow">Weddings, teams & families</p><h2>Bring everyone in.</h2></div><span class="panel-mark">↗ 01</span></div>
+        <div class="group-layout"><form class="studio-form" id="group-form"><label>Event or group name<input name="event" placeholder="e.g. Anita & Brian's wedding" required></label><label>Fabric or style note<textarea name="style" rows="3" placeholder="e.g. Rust Ankara, matching shirts"></textarea></label><label>Deadline<input name="deadline" type="date" required></label><button class="btn" type="submit">Create group link <span>→</span></button><p class="form-message" id="group-message" aria-live="polite"></p></form><div class="group-result" id="group-result" hidden><p class="eyebrow">Your group is ready</p><div class="group-code">HOG-<strong id="group-code">MAYA24</strong></div><p>Share this invite. Each guest adds their name, size or measurements and a note.</p><div class="share-link"><span id="invite-link">houseofgemini.co.ke/join/MAYA24</span><button type="button" id="copy-invite">Copy</button></div><div class="date-rail"><div><b>Measurements due</b><span>We’ll confirm this with you</span></div><div><b>Fitting</b><span>Scheduled after first sample</span></div><div><b>Collection</b><span id="collection-date">Before your deadline</span></div></div><a class="btn" id="group-whatsapp" href="#" target="_blank" rel="noopener">Send group to WhatsApp <span>↗</span></a></div></div>
+      </section>
+
+      <section class="tool-panel" id="tracker-panel" role="tabpanel" aria-labelledby="tracker-tab" hidden>
+        <div class="panel-heading"><div><p class="eyebrow">Made-to-order progress</p><h2>Follow the stitch.</h2></div><span class="ticket-stamp">JOB TICKET</span></div>
+        <form class="tracker-search" id="tracker-form"><label for="order-code">Order code</label><input id="order-code" name="code" placeholder="HOG-0001" pattern="HOG-[0-9]{4}" required><button class="btn" type="submit">Check order <span>→</span></button></form><p class="error-message" id="tracker-error" role="alert" hidden>We couldn’t find that code. Check the format and try again.</p>
+        <div class="ticket" id="ticket-result" hidden><div class="ticket-top"><div><span class="ticket-label">Order</span><strong id="ticket-code">HOG-0001</strong></div><div><span class="ticket-label">Expected ready</span><strong>18 Nov 2026</strong></div></div><div class="progress-line"><div class="needle">⌁</div><ol><li class="done"><b>Confirmed</b><small>28 Oct</small></li><li class="done"><b>Fabric sourced</b><small>30 Oct</small></li><li class="active"><b>Cutting</b><small>03 Nov</small></li><li><b>Sewing</b><small>Next</small></li><li><b>Finishing</b><small>—</small></li><li><b>Ready</b><small>18 Nov</small></li></ol></div><div class="ticket-bottom"><span>Last updated today · Nairobi studio</span><a class="btn btn-outline" id="tracker-whatsapp" href="#" target="_blank" rel="noopener">Ask about my order <span>↗</span></a></div></div>
+      </section>
+    </div></section>
+    <section class="palette-note"><div class="container"><p class="eyebrow">Colour direction</p><h2>Emerald stays the anchor.</h2><div class="palette-grid"><div><span class="palette-chip emerald-chip"></span><b>Recommended</b><small>Emerald + gold: recognisable, warm, high-contrast and calm beside vivid Ankara.</small></div><div><span class="palette-chip teal-chip"></span><b>Alternative</b><small>Ankara teal + saffron: more graphic and energetic, best for campaign moments.</small></div><div><span class="palette-chip charcoal-chip"></span><b>Alternative</b><small>Charcoal + brass: most luxurious, but less welcoming for school and family orders.</small></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-bottom"><span>© <span data-year></span> House of Gemini. All rights reserved.</span><span>Nairobi · Coastal Kenya</span></div></footer>
+  <script src="script.js"></script><script src="order.js"></script>
+</body></html>

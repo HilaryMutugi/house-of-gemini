@@ -1,0 +1,12 @@
+{
+  "_how_to_update": "One entry per order. stage: 0 Booked, 1 Measured, 2 Cutting, 3 Sewing, 4 Finishing, 5 Ready. Dates are YYYY-MM-DD. This repo is public, so never put customer names or phone numbers here.",
+  "orders": {
+    "HOG-0001": {
+      "item": "Example order: 20 embroidered coveralls",
+      "stage": 3,
+      "booked": "2026-10-14",
+      "ready": "2026-11-08",
+      "note": "This is a sample so you can see how tracking works."
+    }
+  }
+}

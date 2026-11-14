@@ -29,7 +29,9 @@ Done (Round 2, Oct 2026): homepage buyer split (Uniforms vs Custom fashion, each
 
 Positioning line: "Uniforms for schools and organisations, and custom fashion for individuals. Designed and made in Kenya."
 
-Order tools (Oct 2026): `order.html` with `tools.css` and `tools.js`. Uniform quote builder, group order invites, order tracker. Prices, lead times, discounts and fabrics live in `CONFIG` at the top of `tools.js`. Tracker reads `orders.json` (public repo, so no customer names or phone numbers). Page is `noindex` and not in the nav until Anita confirms prices; then set `pricesConfirmed: true`, remove the noindex meta and add a nav link.
+Order tools (redesigned Nov 2026): `order.html` now uses `order.css`, `order.js` and `order-engine.js` (the older `tools.css` / `tools.js` are retired but kept for reference; `CONFIG` with prices and lead times lives in `tools.js`). Uniform quote builder with live garment preview, group order invites, order tracker. Tracker reads `orders.json` (public repo, so no customer names or phone numbers). Page is `noindex` and not in the nav until Anita confirms prices; then set `pricesConfirmed: true` in `tools.js`, remove the noindex meta and add a nav link. Nav and footer on this page must match the rest of the site.
+
+Housekeeping (Nov 2026): removed `dist/` (a stale 68MB duplicate of the site that GitHub Pages was serving at /dist/) and the one-off Windows upload scripts (`cleanup_house_gemini.ps1`, `tools/*.ps1`). Do not commit build output or local scripts; GitHub Pages serves everything in the repo.
 
 Next (waiting on Anita):
 1. FAQ facts: minimum order, typical lead times, deposit terms, delivery to the coast. Do not publish guesses.

@@ -1086,6 +1086,11 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 @media (max-width: 900px) {
   .section { padding: 68px 0; }
   .menu-toggle { display: inline-flex; }
+  /* Elements with an animated transform (.reveal) get promoted to their own
+     compositing layer; on some engines that layer can bleed through the
+     fixed nav panel's background when the mobile menu opens. Hiding the
+     page content behind the overlay avoids it and is the right UX anyway. */
+  body.menu-open main { opacity: 0; }
   .site-nav {
     position: fixed;
     inset: 108px 16px auto;

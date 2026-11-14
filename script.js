@@ -171,51 +171,101 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(whatsappUrl, "_blank", "noopener");
   });
 
-  // Portfolio lightbox - click any gallery image to inspect it full-screen.
-  const galleryLinks = document.querySelectorAll(".gallery-item img");
-  if (galleryLinks.length) {
+  // Gallery viewer: click any portfolio or collection image to browse full-screen,
+  // with previous/next arrows, keyboard arrows and swipe on touch screens.
+  const galleryGroups = [];
+  const portfolioImages = Array.from(document.querySelectorAll(".gallery-item img"));
+  if (portfolioImages.length) galleryGroups.push({ images: portfolioImages, type: "portfolio" });
+  document.querySelectorAll(".collection-gallery").forEach(gallery => {
+    const images = Array.from(gallery.querySelectorAll("img"));
+    if (images.length) galleryGroups.push({ images, type: "collection" });
+  });
+
+  if (galleryGroups.length) {
     const lightbox = document.createElement("div");
     lightbox.className = "lightbox";
     lightbox.setAttribute("role", "dialog");
     lightbox.setAttribute("aria-modal", "true");
-    lightbox.setAttribute("aria-label", "Portfolio image viewer");
+    lightbox.setAttribute("aria-label", "Image viewer");
     lightbox.innerHTML = `
       <div class="lightbox-dialog">
         <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">&#8249;</button>
         <img class="lightbox-image" alt="">
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">&#8250;</button>
         <p class="lightbox-caption"></p>
+        <p class="lightbox-counter" aria-live="polite"></p>
       </div>`;
     document.body.append(lightbox);
     const viewerImage = lightbox.querySelector(".lightbox-image");
     const viewerCaption = lightbox.querySelector(".lightbox-caption");
+    const viewerCounter = lightbox.querySelector(".lightbox-counter");
     const closeButton = lightbox.querySelector(".lightbox-close");
+    const prevButton = lightbox.querySelector(".lightbox-prev");
+    const nextButton = lightbox.querySelector(".lightbox-next");
 
+    let activeImages = [];
+    let activeIndex = 0;
+
+    const showImage = index => {
+      activeIndex = (index + activeImages.length) % activeImages.length;
+      const image = activeImages[activeIndex];
+      viewerImage.src = image.src;
+      viewerImage.alt = image.alt;
+      const item = image.closest(".gallery-item");
+      viewerCaption.textContent = item?.querySelector("h3")?.textContent || image.alt;
+      const single = activeImages.length < 2;
+      viewerCounter.textContent = single ? "" : `${activeIndex + 1} of ${activeImages.length}`;
+      prevButton.hidden = nextButton.hidden = single;
+    };
+
+    const openLightbox = (group, image) => {
+      // Portfolio images respect the active filter, so hidden items are skipped.
+      activeImages = group.images.filter(img => img.closest(".gallery-item.hidden") === null);
+      showImage(Math.max(0, activeImages.indexOf(image)));
+      lightbox.classList.add("open");
+      document.body.classList.add("modal-open");
+      closeButton.focus();
+    };
     const closeLightbox = () => {
       lightbox.classList.remove("open");
       document.body.classList.remove("modal-open");
     };
 
-    galleryLinks.forEach(image => {
-      const item = image.closest(".gallery-item");
-      item?.setAttribute("data-lightbox", "true");
-      item?.addEventListener("click", event => {
-        event.preventDefault();
-        viewerImage.src = image.src;
-        viewerImage.alt = image.alt;
-        viewerCaption.textContent = item.querySelector("h3")?.textContent || image.alt;
-        lightbox.classList.add("open");
-        document.body.classList.add("modal-open");
-        closeButton.focus();
+    galleryGroups.forEach(group => {
+      group.images.forEach(image => {
+        const target = group.type === "portfolio" ? image.closest(".gallery-item") : image.closest("figure") || image;
+        target.setAttribute("data-lightbox", "true");
+        target.addEventListener("click", event => {
+          event.preventDefault();
+          openLightbox(group, image);
+        });
       });
     });
 
     closeButton.addEventListener("click", closeLightbox);
+    prevButton.addEventListener("click", () => showImage(activeIndex - 1));
+    nextButton.addEventListener("click", () => showImage(activeIndex + 1));
     lightbox.addEventListener("click", event => {
       if (event.target === lightbox) closeLightbox();
     });
     document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+      if (!lightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showImage(activeIndex - 1);
+      if (event.key === "ArrowRight") showImage(activeIndex + 1);
     });
+
+    let touchStartX = null;
+    lightbox.addEventListener("touchstart", event => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener("touchend", event => {
+      if (touchStartX === null) return;
+      const delta = event.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(delta) > 48) showImage(activeIndex + (delta < 0 ? 1 : -1));
+    }, { passive: true });
   }
 
   // Give visitors reliable webmail choices instead of relying on an incorrectly
@@ -291,4 +341,94 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach(item => {
     item.textContent = new Date().getFullYear();
   });
+
+  // Keep the collections jump bar pinned under the header and highlight the section in view.
+  const jumpBar = document.querySelector(".collection-jump");
+  if (header) {
+    const setHeaderHeight = () => {
+      document.documentElement.style.setProperty("--header-h", `${header.offsetHeight}px`);
+    };
+    setHeaderHeight();
+    window.addEventListener("resize", setHeaderHeight);
+  }
+  if (jumpBar && "IntersectionObserver" in window) {
+    const jumpLinks = Array.from(jumpBar.querySelectorAll("a[href^='#']"));
+    const sections = jumpLinks
+      .map(link => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+    const setActive = id => {
+      jumpLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+      });
+    };
+    const spy = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) setActive(visible.target.id);
+    }, { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.2, 0.5] });
+    sections.forEach(section => spy.observe(section));
+    // Near the bottom of the page the last section may never reach the spy band.
+    window.addEventListener("scroll", () => {
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+      if (nearBottom && sections.length) setActive(sections[sections.length - 1].id);
+    }, { passive: true });
+  }
+
+  // Smoothly animate the FAQ accordion open and closed.
+  document.querySelectorAll(".faq-grid details").forEach(item => {
+    const summary = item.querySelector("summary");
+    const content = item.querySelector("p");
+    if (!summary || !content || typeof content.animate !== "function") return;
+    summary.addEventListener("click", event => {
+      event.preventDefault();
+      if (item.open) {
+        const closing = content.animate(
+          [{ height: `${content.offsetHeight}px`, opacity: 1 }, { height: "0px", opacity: 0 }],
+          { duration: 220, easing: "ease" }
+        );
+        closing.onfinish = () => { item.open = false; };
+      } else {
+        item.open = true;
+        content.animate(
+          [{ height: "0px", opacity: 0 }, { height: `${content.scrollHeight}px`, opacity: 1 }],
+          { duration: 260, easing: "ease" }
+        );
+      }
+    });
+  });
+
+  // Carry the chosen collection from "Commission this look" links into the contact form.
+  if (form) {
+    const params = new URLSearchParams(window.location.search);
+    const chosenCollection = params.get("collection");
+    if (chosenCollection) {
+      const serviceByCollection = {
+        "Kimono": "Beach / resort wear",
+        "Savannah Bloom": "Ankara / African print fashion",
+        "Signature Elegance": "Event clothing",
+        "Professional Uniform": "Industrial / corporate uniforms",
+        "School Uniform": "School uniform system"
+      };
+      const serviceSelect = form.querySelector("#service");
+      const wanted = serviceByCollection[chosenCollection];
+      if (serviceSelect && wanted) {
+        Array.from(serviceSelect.options).forEach(option => {
+          if (option.textContent.trim() === wanted) serviceSelect.value = option.value || wanted;
+        });
+      }
+      const messageField = form.querySelector("#message");
+      if (messageField && !messageField.value) {
+        messageField.value = `I'm interested in the ${chosenCollection} collection. `;
+      }
+      const formCard = form.closest(".form-card");
+      if (formCard && !formCard.querySelector(".prefill-note")) {
+        const note = document.createElement("p");
+        note.className = "prefill-note";
+        note.textContent = `Enquiring about: ${chosenCollection}`;
+        formCard.insertBefore(note, form);
+      }
+    }
+  }
+
 });

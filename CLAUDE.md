@@ -33,6 +33,8 @@ Order tools (redesigned Nov 2026): `order.html` now uses `order.css`, `order.js`
 
 Housekeeping (Nov 2026): removed `dist/` (a stale 68MB duplicate of the site that GitHub Pages was serving at /dist/) and the one-off Windows upload scripts (`cleanup_house_gemini.ps1`, `tools/*.ps1`). Do not commit build output or local scripts; GitHub Pages serves everything in the repo.
 
+Interactive round (Nov 2026): sitewide gallery lightbox with prev/next arrows, keyboard arrows and swipe (collections galleries now clickable; portfolio lightbox upgraded and respects the active filter), sticky scrollspy on the collections jump bar (`--header-h` set from JS), animated FAQ accordion, and the contact form now reads `?collection=` from "Commission this look" links to prefill the service and message.
+
 Next (waiting on Anita):
 1. FAQ facts: minimum order, typical lead times, deposit terms, delivery to the coast. Do not publish guesses.
 2. Trust: 1 to 2 client quotes, client logos (only clients she confirms), Instagram/TikTok handles.

@@ -379,10 +379,11 @@ body.modal-open { overflow: hidden; }
   backdrop-filter: blur(12px);
 }
 .lightbox.open { opacity: 1; visibility: visible; }
-.lightbox-dialog { position: relative; width: min(1080px, 100%); max-height: 90vh; }
+.lightbox-dialog { position: relative; max-width: min(1080px, 100%); max-height: 90vh; }
 .lightbox-image {
-  width: 100%; max-height: 78vh; object-fit: contain;
-  border-radius: 16px; background: #fff; box-shadow: 0 28px 85px rgba(0,0,0,.42);
+  display: block; width: auto; height: auto;
+  max-width: 100%; max-height: 78vh; object-fit: contain;
+  border-radius: 16px; background: var(--paper); box-shadow: 0 28px 85px rgba(0,0,0,.42);
 }
 .lightbox-caption { padding-top: 16px; color: #fff; text-align: center; font-family: var(--serif); font-size: 1.15rem; }
 .lightbox-close {
@@ -390,6 +391,21 @@ body.modal-open { overflow: hidden; }
   display: grid; place-items: center; width: 43px; height: 43px;
   border: 1px solid rgba(255,255,255,.22); border-radius: 50%;
   background: var(--ink); color: #fff; font-size: 1.4rem;
+}
+
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+  display: grid; place-items: center; width: 46px; height: 46px;
+  border: 1px solid rgba(255,255,255,.22); border-radius: 50%;
+  background: rgba(32,39,32,.72); color: #fff; font-size: 1.7rem; line-height: 1;
+  transition: background .2s ease, border-color .2s ease;
+}
+.lightbox-nav:hover { background: var(--emerald); border-color: var(--emerald); }
+.lightbox-prev { left: -14px; }
+.lightbox-next { right: -14px; }
+.lightbox-counter {
+  padding-top: 6px; color: rgba(255,255,255,.72); text-align: center;
+  font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
 }
 
 /* Ankara collection feature */
@@ -489,7 +505,8 @@ body.modal-open { overflow: hidden; }
 
 /* Collections */
 .collection-jump {
-  position: relative;
+  position: sticky;
+  top: var(--header-h, 72px);
   z-index: 60;
   border-bottom: 1px solid var(--line);
   background: rgba(255,253,248,.92);
@@ -510,7 +527,8 @@ body.modal-open { overflow: hidden; }
   font-size: .78rem;
   font-weight: 800;
 }
-.collection-jump a:hover { background: var(--emerald); border-color: var(--emerald); color: #fff; }
+.collection-jump a:hover,
+.collection-jump a.active { background: var(--emerald); border-color: var(--emerald); color: #fff; }
 .collection-section {
   position: relative;
   padding: 54px 0;
@@ -579,6 +597,7 @@ body.modal-open { overflow: hidden; }
   pointer-events: none;
 }
 .collection-card:hover img { transform: scale(1.025); filter: saturate(1.03); }
+.collection-card[data-lightbox] { cursor: zoom-in; }
 .collection-section .actions { margin-top: 26px; }
 #school-uniform .collection-card {
   background: #f8f4eb;
@@ -1182,6 +1201,10 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 @media (max-width: 650px) {
   html { scroll-padding-top: 106px; }
   .container, .narrow { width: min(100% - 28px, 1160px); }
+  /* The side margin here (14px) is narrower than the photo frame's offset
+     border (18px), which pushed it past the edge and caused a few px of
+     horizontal scroll. Shrink the border to fit. */
+  .image-frame::after { inset: 12px -12px -12px 12px; }
   .nav-wrap { min-height: 94px; gap: 10px; }
   .brand-name { font-size: 1.08rem; }
   .brand-logo { width: 138px; height: 55px; }
@@ -1263,6 +1286,9 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
   .floating-whatsapp::after { display: none; }
   .floating-whatsapp::before { width: 26px; height: 26px; }
   .lightbox { padding: 16px; }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+  .lightbox-nav { width: 40px; height: 40px; background: rgba(32,39,32,.85); }
   .lightbox-close { right: 4px; top: -16px; }
 }
 
@@ -1413,7 +1439,8 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 .maker-details{background:var(--emerald);color:#fff}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:12%;align-items:start}.maker-details h2{font-size:clamp(2.6rem,4vw,4.4rem);line-height:1}.details-list a{display:block;padding:20px 0;border-top:1px solid rgba(255,255,255,.28);color:#fff}.details-list a:last-child{border-bottom:1px solid rgba(255,255,255,.28)}.details-list strong{display:block;font:600 1.55rem var(--serif)}.details-list span{display:block;color:rgba(255,255,255,.72);font-size:.86rem}.details-list i{float:right;font-style:normal;font-size:1.3rem}
 .work-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.work-card{position:relative;min-width:0;height:280px;overflow:hidden;color:#fff}.work-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.work-card:hover img{transform:scale(1.04)}.work-card:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.7))}.work-card span{position:absolute;z-index:1;left:12px;bottom:12px;font-size:.78rem}
 .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:8%;align-items:center}.story-image{height:480px}.story-copy h2{font-size:clamp(2.6rem,4.2vw,4.6rem);line-height:.95}.story-copy .lead{font-size:1rem}.story-copy .btn{margin-top:16px}
-.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.faq-grid details{border-top:1px solid var(--line);padding:18px 0}.faq-grid summary{cursor:pointer;font:600 1.05rem var(--serif);list-style:none}.faq-grid summary::-webkit-details-marker{display:none}.faq-grid summary:after{content:"⌄";float:right;font:1rem var(--sans)}.faq-grid p{color:var(--muted);font-size:.85rem}
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.faq-grid details{border-top:1px solid var(--line);padding:18px 0}.faq-grid summary{cursor:pointer;font:600 1.05rem var(--serif);list-style:none}.faq-grid summary::-webkit-details-marker{display:none}.faq-grid summary:after{content:"⌄";float:right;font:1rem var(--sans);transition:transform .25s ease}
+.faq-grid details[open] summary:after{transform:rotate(180deg) translateY(4px)}.faq-grid p{color:var(--muted);font-size:.85rem;overflow:hidden}
 .maker-cta{background:var(--paper);padding:44px 0}.maker-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.maker-cta .eyebrow{margin:0}.maker-cta p:not(.eyebrow){margin:6px 0 0;color:var(--muted)}.maker-cta .actions{margin:0}
 .maker-home .site-footer{background:var(--emerald);color:#fff}.maker-home .footer-bottom{padding:30px 0;border:0}
 @media(max-width:900px){.maker-hero-grid,.story-grid,.details-grid{grid-template-columns:1fr}.maker-hero-copy{order:1}.maker-hero-image{order:0}.process-steps{grid-template-columns:1fr}.process-steps article,.process-steps article+article{padding:20px 0;border-right:0;border-bottom:1px solid var(--line)}.process-steps article:last-child{border-bottom:0}.work-grid{grid-template-columns:repeat(3,1fr)}.work-card{height:240px}.story-image{height:400px}.maker-cta-inner{align-items:flex-start;flex-direction:column}}
@@ -1486,3 +1513,11 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 @media(max-width:900px){.case-grid{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.split-card{grid-template-columns:1fr}.split-media{height:300px}.split-copy{padding:22px 18px}.case-points li{grid-template-columns:1fr;gap:2px}.case-thumbs img{height:130px}.case-actions{display:grid}.case-actions .btn{width:100%;text-align:center}.faq-grid{grid-template-columns:1fr}}
 .case-cover{height:auto;object-fit:contain}
+
+/* Contact form: note shown when a collection link prefills the form */
+.prefill-note {
+  margin: 0 0 18px; padding: 10px 14px;
+  border: 1px solid rgba(184,139,69,.35); border-radius: 10px;
+  background: rgba(226,196,141,.16); color: var(--emerald);
+  font-size: .82rem; font-weight: 700; letter-spacing: .04em;
+}

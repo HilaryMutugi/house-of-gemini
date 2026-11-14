@@ -1201,6 +1201,10 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 @media (max-width: 650px) {
   html { scroll-padding-top: 106px; }
   .container, .narrow { width: min(100% - 28px, 1160px); }
+  /* The side margin here (14px) is narrower than the photo frame's offset
+     border (18px), which pushed it past the edge and caused a few px of
+     horizontal scroll. Shrink the border to fit. */
+  .image-frame::after { inset: 12px -12px -12px 12px; }
   .nav-wrap { min-height: 94px; gap: 10px; }
   .brand-name { font-size: 1.08rem; }
   .brand-logo { width: 138px; height: 55px; }

@@ -94,11 +94,16 @@ p { margin: 0; }
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255, 253, 248, 0.96);
   border-bottom: 1px solid transparent;
-  backdrop-filter: blur(14px);
   transition: .25s ease;
   overflow: visible;
+  isolation: isolate;
+}
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: rgba(255, 253, 248, 0.96);
+  backdrop-filter: blur(14px);
+  pointer-events: none;
 }
 .site-header.scrolled { border-color: rgba(184,139,69,.22); box-shadow: 0 10px 35px rgba(23,63,54,.07); }
 .nav-wrap,
@@ -1382,7 +1387,7 @@ body.footer-visible .floating-whatsapp { opacity: 0; pointer-events: none; trans
 
 /* Maker-led landing page */
 .maker-home{background:var(--cream)}
-.maker-home .site-header{background:rgba(255,253,248,.92)}
+.maker-home .site-header::before{background:rgba(255,253,248,.92)}
 .maker-hero{padding:28px 0 58px;background:var(--paper)}
 .maker-hero-grid{display:grid;grid-template-columns:.83fr 1.17fr;gap:clamp(36px,6vw,88px);align-items:center}
 .maker-hero-copy{padding:24px 0 24px 24px;border-left:1px solid var(--gold)}
